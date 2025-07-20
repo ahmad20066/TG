@@ -1,0 +1,318 @@
+.values-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: transparent;
+}
+
+.values-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--dark-gray);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.5),
+        0 8px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--crimson-red);
+    animation: floatContainer 6s ease-in-out infinite;
+}
+
+@keyframes floatContainer {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Remove the grid background overlay */
+.values-container::before {
+    display: none;
+}
+
+.values-title {
+    font-size: 2.8rem;
+    margin-top: 30px;
+    font-weight: 800;
+    color: var(--pure-white);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    position: relative;
+}
+
+.values-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--crimson-red);
+    border-radius: 2px;
+}
+
+.step-progress {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.step-dot {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--light-gray);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.step-dot.active {
+    background: var(--crimson-red);
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.step-dot.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmerProgress 2s infinite;
+}
+
+@keyframes shimmerProgress {
+    100% {
+        left: 100%;
+    }
+}
+
+.values-description {
+    text-align: left;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.values-description p {
+    font-size: 1.2rem;
+    color: var(--pure-white);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-hint {
+    font-size: 0.9rem !important;
+    color: var(--crimson-red) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 1;
+}
+
+.scroll-hint::after {
+    content: '↓';
+    font-size: 1.2em;
+    animation: bounceArrow 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes bounceArrow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+.values-stack {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 1rem;
+}
+
+/* Enhanced Value Cards - Solid and Clear */
+.value-card {
+    position: absolute;
+    width: 450px;
+    height: 120px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0 2rem;
+    overflow: hidden;
+    background: var(--crimson-red);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    /* Clear 3D Effect */
+    box-shadow:
+        0 15px 35px rgba(210, 32, 48, 0.4),
+        0 8px 15px rgba(0, 0, 0, 0.3);
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* Remove the overlay effects */
+.value-card::before {
+    display: none;
+}
+
+.value-card::after {
+    display: none;
+}
+
+.value-card:hover::after {
+    display: none;
+}
+
+.value-card-content {
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    position: relative;
+    width: 100%;
+}
+
+.value-text {
+    flex: 1;
+    text-align: left;
+}
+
+.value-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin: 0 0 0.25rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.value-subtitle {
+    font-size: 0.9rem;
+    color: var(--pure-white);
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+
+.value-card:hover {
+    transform: scale(1.05) translateZ(20px);
+    box-shadow:
+        0 25px 50px rgba(210, 32, 48, 0.6),
+        0 12px 25px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.value-card:hover .value-title {
+    color: var(--pure-white);
+}
+
+.value-card:hover .value-subtitle {
+    color: var(--pure-white);
+    opacity: 1;
+}
+
+/* Remove unique glow effects */
+.value-card-1::before,
+.value-card-2::before,
+.value-card-3::before,
+.value-card-4::before {
+    display: none;
+}
+
+.value-card:hover::before {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .values-section {
+        padding: 2rem 1rem;
+    }
+
+    .values-container {
+        max-width: 350px;
+        height: 400px;
+        margin-left: 0;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    .values-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .values-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .step-progress {
+        justify-content: center;
+    }
+
+    .step-dot {
+        width: 20px;
+    }
+
+    .values-description {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .value-card {
+        width: 300px;
+        height: 100px;
+        left: 0;
+        transform: translateX(-50%);
+        padding: 0 1.5rem;
+    }
+
+    .values-stack {
+        justify-content: center;
+    }
+
+    .value-title {
+        font-size: 1.2rem;
+    }
+
+    .value-subtitle {
+        font-size: 0.8rem;
+    }
+}
