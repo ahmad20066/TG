@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Services.css';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+    const navigate = useNavigate();
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const servicesGridRef = useRef(null);
@@ -251,6 +253,15 @@ const Services = () => {
                                         transition: { duration: 0.2 }
                                     }}
                                     whileTap={{ scale: 0.95 }}
+                                    onClick={() => {
+                                        if (service.title === "Production") {
+                                            navigate('/services/media-production');
+                                        } else if (service.title === "Tech") {
+                                            navigate('/services/tech');
+                                        } else if (service.title === "Marketing & Communication") {
+                                            navigate('/services/marketing');
+                                        }
+                                    }}
                                 >
                                     Learn More
                                 </motion.button>

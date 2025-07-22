@@ -1,33 +1,39 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './FeaturedProjects.css';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedProjects = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const projectsGridRef = useRef(null);
     const progressRef = useRef(null);
+    const navigate = useNavigate();
 
     const projects = [
         {
+            id: 'bentley-showroom',
             title: "Bentley Digital Showroom",
             category: "Web Development & 3D",
             description: "Immersive digital showroom experience with real-time 3D car configurator",
             image: "/projects/bentley-showroom.jpg"
         },
         {
+            id: 'mclaren-hub',
             title: "McLaren Racing Hub",
             category: "Mobile App & IoT",
             description: "Real-time racing telemetry and fan engagement platform",
             image: "/projects/mclaren-hub.jpg"
         },
         {
+            id: 'rr-bespoke',
             title: "Rolls-Royce Bespoke",
             category: "AR & Visualization",
             description: "Augmented reality customization experience for luxury vehicles",
             image: "/projects/rr-bespoke.jpg"
         },
         {
+            id: 'fleet-management',
             title: "Modern Fleet Management",
             category: "Enterprise Software",
             description: "Comprehensive fleet management and analytics platform",
@@ -125,6 +131,8 @@ const FeaturedProjects = () => {
                                 y: -10,
                                 transition: { duration: 0.2 }
                             } : {}}
+                            onClick={() => navigate(`/projects/${project.id}`)}
+                            style={{ cursor: 'pointer' }}
                         >
                             <div className="project-image">
                                 <div className="project-overlay">
