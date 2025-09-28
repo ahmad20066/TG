@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import './MediaProductionPage.css';
 
 const MediaProductionPage = () => {
@@ -454,7 +454,6 @@ const MediaProductionPage = () => {
                     </div>
                 )}
             </section>
-
             <Footer />
         </div>
     );
