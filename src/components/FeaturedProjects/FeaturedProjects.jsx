@@ -160,9 +160,9 @@ const FeaturedProjects = () => {
               style={{ cursor: "pointer" }}
             >
               <div className="project-image">
-                <div className="project-overlay">
+                {/* <div className="project-overlay">
                   <span className="view-project">View Project</span>
-                </div>
+                </div> */}
                 <div className="image-placeholder">
                   <div className="placeholder-text">{project.title}</div>
                 </div>
@@ -207,6 +207,7 @@ const FeaturedProjects = () => {
           <p>Let's create something extraordinary together</p>
           <motion.button
             className="cta-button"
+            onClick={() => navigate("/contact")}
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.2 },

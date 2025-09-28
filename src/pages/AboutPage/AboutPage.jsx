@@ -214,7 +214,7 @@ const AboutPage = () => {
         </section>
 
         {/* Timeline Section */}
-        <section className="timeline-section">
+        {/* <section className="timeline-section">
           <motion.div
             className="section-container"
             initial={{ opacity: 0, y: 30 }}
@@ -286,7 +286,7 @@ const AboutPage = () => {
               ))}
             </div>
           </motion.div>
-        </section>
+        </section> */}
 
         {/* Services Section */}
         <section className="services-section">

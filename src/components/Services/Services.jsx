@@ -290,7 +290,7 @@ const Services = () => {
                     </motion.div>
                   ))}
                 </div>
-                <motion.button
+                {/* <motion.button
                   className={`service-cta ${
                     index === 1 ? "service-cta-white" : ""
                   }`}
@@ -310,7 +310,7 @@ const Services = () => {
                   }}
                 >
                   Learn More
-                </motion.button>
+                </motion.button> */}
               </div>
             </motion.div>
           ))}
