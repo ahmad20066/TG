@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import {
   FaGlobe,
@@ -15,6 +16,7 @@ import Footer from "../../components/Footer/Footer";
 const WorkPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
 
   // Particle animation
   useEffect(() => {
@@ -359,6 +361,7 @@ const WorkPage = () => {
               <h2>Have a Project in Mind?</h2>
               <p>Let's collaborate to bring your vision to life</p>
               <motion.button
+                onClick={() => navigate("/contact")}
                 className="cta-button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

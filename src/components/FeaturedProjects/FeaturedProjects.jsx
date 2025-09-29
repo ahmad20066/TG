@@ -156,7 +156,7 @@ const FeaturedProjects = () => {
                     }
                   : {}
               }
-              onClick={() => navigate(`/projects/${project.id}`)}
+              onClick={() => navigate("/work")}
               style={{ cursor: "pointer" }}
             >
               <div className="project-image">

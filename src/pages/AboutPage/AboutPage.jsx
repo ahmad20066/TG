@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import {
   FaRocket,
@@ -15,6 +16,7 @@ import Footer from "../../components/Footer/Footer";
 
 const AboutPage = () => {
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
 
   // Particle animation code...
   useEffect(() => {
@@ -415,8 +417,12 @@ const AboutPage = () => {
               Ready to start your digital transformation journey?
             </p>
             <motion.button
-              className="contact-button"
-              whileHover={{ scale: 1.05 }}
+              className="cta-button"
+              onClick={() => navigate("/contact")}
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.2 },
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Contact Us

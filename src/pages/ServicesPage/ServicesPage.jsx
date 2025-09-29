@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Header from "../../components/Header/Header";
+import { useNavigate } from "react-router-dom";
+
 import {
   FaCode,
   FaMobileAlt,
@@ -24,6 +26,7 @@ import Footer from "../../components/Footer/Footer";
 const ServicesPage = () => {
   const [expandedCard, setExpandedCard] = useState(null);
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleCardClick = (index) => {
     if (window.innerWidth <= 768) {
@@ -323,8 +326,8 @@ const ServicesPage = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 {[
-                  { number: "20+", label: "Projects Completed" },
-                  { number: "50+", label: "Expert Team Members" },
+                  { number: "8+", label: "Projects Completed" },
+                  { number: "15+", label: "Expert Team Members" },
                   { number: "98%", label: "Client Satisfaction" },
                 ].map((stat, index) => (
                   <motion.div
@@ -380,6 +383,119 @@ const ServicesPage = () => {
                   </div>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Service Categories Navigation */}
+        <section className="service-categories">
+          <div className="section-container">
+            <h2>Explore Our Services</h2>
+            <p className="section-description">
+              Dive deeper into our specialized service offerings
+            </p>
+            <div className="categories-grid">
+              <motion.div
+                className="category-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="category-icon">
+                  <FaBullhorn />
+                </div>
+                <div className="category-content">
+                  <h3>Marketing & Communication</h3>
+                  <p>
+                    Strategic marketing solutions to boost your online presence
+                    and drive growth through targeted campaigns.
+                  </p>
+                  <ul className="category-highlights">
+                    <li>Digital Marketing</li>
+                    <li>Social Media Management</li>
+                    <li>Brand Development</li>
+                    <li>Content Creation</li>
+                  </ul>
+                  <motion.button
+                    className="category-button"
+                    onClick={() => navigate("/services/marketing")}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Explore Marketing Services
+                  </motion.button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="category-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="category-icon">
+                  <FaCode />
+                </div>
+                <div className="category-content">
+                  <h3>Technology Solutions</h3>
+                  <p>
+                    Cutting-edge technology solutions from web development to AI
+                    implementation for modern businesses.
+                  </p>
+                  <ul className="category-highlights">
+                    <li>Web Development</li>
+                    <li>Mobile Applications</li>
+                    <li>Cloud Solutions</li>
+                    <li>AI & Machine Learning</li>
+                  </ul>
+                  <motion.button
+                    className="category-button"
+                    onClick={() => navigate("/services/tech")}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Explore Tech Services
+                  </motion.button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="category-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="category-icon">
+                  <FaVideo />
+                </div>
+                <div className="category-content">
+                  <h3>Media Production</h3>
+                  <p>
+                    Professional media production services from photography to
+                    video production and CGI visualization.
+                  </p>
+                  <ul className="category-highlights">
+                    <li>Video Production</li>
+                    <li>Photography</li>
+                    <li>CGI & 3D Rendering</li>
+                    <li>Post-Production</li>
+                  </ul>
+                  <motion.button
+                    className="category-button"
+                    onClick={() => navigate("/services/media-production")}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Explore Media Services
+                  </motion.button>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -501,7 +617,11 @@ const ServicesPage = () => {
               <p>Let's discuss how we can help bring your ideas to life</p>
               <motion.button
                 className="cta-button"
-                whileHover={{ scale: 1.05 }}
+                onClick={() => navigate("/contact")}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 },
+                }}
                 whileTap={{ scale: 0.95 }}
               >
                 Contact Us

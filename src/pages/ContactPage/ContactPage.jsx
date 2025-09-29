@@ -162,12 +162,6 @@ const ContactPage = () => {
       value: "hello@tgmena.com",
       link: "mailto:hello@tgmena.com",
     },
-    // {
-    //   icon: <FaMapMarkerAlt />,
-    //   title: "Location",
-    //   value: "Dubai, UAE",
-    //   link: "#",
-    // },
   ];
 
   const socialLinks = [
@@ -198,9 +192,8 @@ const ContactPage = () => {
   ];
 
   const businessHours = [
-    { day: "Monday - Thursday", hours: "9:00 AM - 6:00 PM" },
-    { day: "Friday", hours: "9:00 AM - 5:00 PM" },
-    { day: "Saturday - Sunday", hours: "Closed" },
+    { day: "Sunday - Thursday", hours: "9:00 AM - 6:00 PM" },
+    { day: "Friday - Saturday", hours: "Closed" },
   ];
 
   return (

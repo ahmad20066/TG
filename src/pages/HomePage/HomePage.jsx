@@ -205,7 +205,7 @@ const HomePage = () => {
                   region, helping businesses innovate and grow in the digital
                   age.
                 </motion.p>
-                <motion.button
+                {/* <motion.button
                   className="hero-cta"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -214,7 +214,7 @@ const HomePage = () => {
                   transition={{ duration: 0.8, delay: 1.1 }}
                 >
                   Get Started
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </div>
           </div>
@@ -255,9 +255,9 @@ const HomePage = () => {
               </motion.h2>
               <div className="stats">
                 {[
-                  { number: "10+", label: "Years of Excellence" },
-                  { number: "200+", label: "Projects Delivered" },
-                  { number: "50+", label: "Expert Team Members" },
+                  { number: "2+", label: "Years of Excellence" },
+                  { number: "8+", label: "Projects Delivered" },
+                  { number: "15+", label: "Expert Team Members" },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
