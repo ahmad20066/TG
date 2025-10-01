@@ -363,24 +363,19 @@ const AboutPage = () => {
             <div className="team-grid">
               {[
                 {
-                  name: "Sarah Johnson",
-                  role: "CEO & Founder",
-                  description: "15+ years of digital transformation expertise",
+                  name: "Mouhammad Al-Rifai",
+                  // role: "CEO & Founder",
+                  // description: "15+ years of digital transformation expertise",
                 },
                 {
-                  name: "Michael Chen",
-                  role: "Technical Director",
-                  description: "Expert in emerging technologies",
+                  name: "Abdelelah Bamarouf",
+                  // role: "Technical Director",
+                  // description: "Expert in emerging technologies",
                 },
                 {
-                  name: "Emma Davis",
-                  role: "Creative Director",
-                  description: "Award-winning design professional",
-                },
-                {
-                  name: "David Kim",
-                  role: "Operations Director",
-                  description: "Specialist in scaling digital operations",
+                  name: "Tareq Bamarouf",
+                  // role: "Creative Director",
+                  // description: "Award-winning design professional",
                 },
               ].map((member, index) => (
                 <motion.div

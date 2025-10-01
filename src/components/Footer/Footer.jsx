@@ -33,16 +33,18 @@ const Footer = () => {
               excellence and technological innovation.
             </p>
             <div className="social-links">
-              <a href="#" className="social-icon" aria-label="Facebook">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="social-icon" aria-label="Twitter">
-                <FaTwitter />
-              </a>
-              <a href="#" className="social-icon" aria-label="Instagram">
+              <a
+                href="https://www.instagram.com/tg.mena?igsh=dXEyYXZmdHg3Yjk4"
+                className="social-icon"
+                aria-label="Instagram"
+              >
                 <FaInstagram />
               </a>
-              <a href="#" className="social-icon" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/company/towardsgreatness/"
+                className="social-icon"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedinIn />
               </a>
             </div>
@@ -139,21 +141,15 @@ const Footer = () => {
             <h4>Contact Us</h4>
             <ul className="footer-links">
               <li>
-                <a href="tel:+971XXXXXXXX">
+                <a href="tel:‎+966 50 397 4458">
                   <FaPhoneAlt className="footer-link-icon" />
-                  +971 XX XXX XXXX
+                  ‎+966 50 397 4458
                 </a>
               </li>
               <li>
-                <a href="mailto:info@tgmena.com">
+                <a href="mailto:Info@tgmena.com">
                   <FaEnvelope className="footer-link-icon" />
-                  info@tgmena.com
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaMapMarkerAlt className="footer-link-icon" />
-                  Dubai, UAE
+                  Info@tgmena.com
                 </a>
               </li>
             </ul>

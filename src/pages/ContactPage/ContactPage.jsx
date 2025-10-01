@@ -153,14 +153,14 @@ const ContactPage = () => {
     {
       icon: <FaPhone />,
       title: "Phone",
-      value: "+971 XX XXX XXXX",
-      link: "tel:+971XXXXXXXX",
+      value: "‎+966 50 397 4458",
+      link: "tel:‎+966 50 397 4458",
     },
     {
       icon: <FaEnvelope />,
       title: "Email",
-      value: "hello@tgmena.com",
-      link: "mailto:hello@tgmena.com",
+      value: "Info@tgmena.com",
+      link: "mailto:Info@tgmena.com",
     },
   ];
 
@@ -168,26 +168,14 @@ const ContactPage = () => {
     {
       icon: <FaLinkedin />,
       name: "LinkedIn",
-      url: "https://linkedin.com/company/tgmena",
+      url: "https://www.linkedin.com/company/towardsgreatness/",
       color: "#0077B5",
     },
     {
       icon: <FaInstagram />,
       name: "Instagram",
-      url: "https://instagram.com/tgmena",
+      url: "https://www.instagram.com/tg.mena?igsh=dXEyYXZmdHg3Yjk4",
       color: "#E4405F",
-    },
-    {
-      icon: <FaTwitter />,
-      name: "Twitter",
-      url: "https://twitter.com/tgmena",
-      color: "#1DA1F2",
-    },
-    {
-      icon: <FaFacebook />,
-      name: "Facebook",
-      url: "https://facebook.com/tgmena",
-      color: "#1877F2",
     },
   ];
 
