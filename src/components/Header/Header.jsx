@@ -66,7 +66,6 @@ const Header = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="header-container">
-        {/* Logo */}
         <motion.div
           className="header-logo"
           whileHover={{ scale: 1.05 }}

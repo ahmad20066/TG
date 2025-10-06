@@ -223,7 +223,7 @@ const Services = () => {
         <motion.div
           className="services-grid"
           ref={servicesGridRef}
-          variants={containerVariants}
+          // variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -232,7 +232,7 @@ const Services = () => {
             <motion.div
               key={index}
               className="service-card"
-              variants={cardVariants}
+              // variants={cardVariants}
               whileHover={
                 !isMobile
                   ? {
@@ -260,12 +260,15 @@ const Services = () => {
                 >
                   {service.icon}
                 </motion.span>
-                <motion.h3 className="service-title" variants={titleVariants}>
+                <motion.h3
+                  className="service-title"
+                  // variants={titleVariants}
+                >
                   {service.title}
                 </motion.h3>
                 <motion.p
                   className="service-description"
-                  variants={titleVariants}
+                  // variants={titleVariants}
                 >
                   {service.description}
                 </motion.p>
@@ -274,7 +277,7 @@ const Services = () => {
                     <motion.div
                       key={itemIndex}
                       className="feature-item"
-                      variants={featureVariants}
+                      // variants={featureVariants}
                       custom={itemIndex}
                       whileHover={
                         !isMobile
@@ -315,26 +318,6 @@ const Services = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Mobile Carousel Navigation */}
-        {isMobile && (
-          <>
-            <div className="carousel-nav">
-              {services.map((_, index) => (
-                <div
-                  key={index}
-                  className={`carousel-dot ${
-                    index === currentSlide ? "active" : ""
-                  }`}
-                  onClick={() => scrollToSlide(index)}
-                />
-              ))}
-            </div>
-            <div className="carousel-progress">
-              <div className="progress-bar" ref={progressRef} />
-            </div>
-          </>
-        )}
       </div>
     </section>
   );

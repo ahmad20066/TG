@@ -205,16 +205,6 @@ const HomePage = () => {
                   region, helping businesses innovate and grow in the digital
                   age.
                 </motion.p>
-                {/* <motion.button
-                  className="hero-cta"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.8, delay: 1.1 }}
-                >
-                  Get Started
-                </motion.button> */}
               </motion.div>
             </div>
           </div>

@@ -17,7 +17,7 @@ const FeaturedProjects = () => {
       category: "Social Media & Lifestyle",
       description:
         "We handled full account management for FANE,shaping a digital presence that matched their bold, street-smart identity. From content planning to daily execution, every detail was aligned with their brand culture",
-      image: "/projects/bentley-showroom.jpg",
+      image: "/assets/brands/fane.png",
     },
     {
       id: "unframed",
@@ -25,7 +25,7 @@ const FeaturedProjects = () => {
       category: "Branding & Design",
       description:
         "We built a bold brand identity that reflects its cutting-edge printing tech and transformative potential. From logo to story, every element was designed to speak innovation without borders",
-      image: "/projects/mclaren-hub.jpg",
+      image: "/assets/brands/unframed.png",
     },
     {
       id: "pebble",
@@ -57,7 +57,7 @@ const FeaturedProjects = () => {
       category: "Mobile application & UI/UX",
       description:
         "We created a smart, user-first fitness platform. From UI/UX design to development, every step was handled in-house to ensure a seamless, intuitive experience that empowers users to train smarter, eat better, and stay on track.",
-      image: "/projects/fleet-management.jpg",
+      image: "/assets/brands/evolve.png",
     },
   ];
 
@@ -160,11 +160,8 @@ const FeaturedProjects = () => {
               style={{ cursor: "pointer" }}
             >
               <div className="project-image">
-                {/* <div className="project-overlay">
-                  <span className="view-project">View Project</span>
-                </div> */}
                 <div className="image-placeholder">
-                  <div className="placeholder-text">{project.title}</div>
+                  <img src={project.image} />
                 </div>
               </div>
               <div className="project-info">
@@ -175,26 +172,6 @@ const FeaturedProjects = () => {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Mobile Carousel Navigation */}
-        {isMobile && (
-          <>
-            <div className="carousel-nav">
-              {projects.map((_, index) => (
-                <div
-                  key={index}
-                  className={`carousel-dot ${
-                    index === currentSlide ? "active" : ""
-                  }`}
-                  onClick={() => scrollToSlide(index)}
-                />
-              ))}
-            </div>
-            <div className="carousel-progress">
-              <div className="progress-bar" ref={progressRef} />
-            </div>
-          </>
-        )}
 
         <motion.div
           className="cta-container"

@@ -32,7 +32,10 @@ const Footer = () => {
               Transforming ideas into digital reality. Your partner in creative
               excellence and technological innovation.
             </p>
-            <div className="social-links">
+            <div
+              className="social-links"
+              style={{ display: "flex", gap: "1rem" }}
+            >
               <a
                 href="https://www.instagram.com/tg.mena?igsh=dXEyYXZmdHg3Yjk4"
                 className="social-icon"

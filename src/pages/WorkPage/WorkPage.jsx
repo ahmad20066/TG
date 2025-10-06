@@ -101,7 +101,7 @@ const WorkPage = () => {
     {
       title: "Fane",
       category: "social media",
-      image: "/projects/ecommerce.jpg",
+      image: "/assets/brands/fane.png",
       icon: <FaShoppingCart />,
       description:
         "We handled full account management for FANE, shaping a digital presence that matched their bold, street-smart identity. From content planning to daily execution, every detail was aligned with their brand culture.",
@@ -111,7 +111,7 @@ const WorkPage = () => {
     {
       title: "Huqqabaz",
       category: "social media",
-      image: "/projects/banking.jpg",
+      image: "/assets/brands/huqqabaz.png",
       icon: <FaMobileAlt />,
       description:
         "We managed HuQQabaz’s social presence with a focus on luxury, lifestyle, and experience-driven content. From strategy to daily execution, we crafted a digital voice as refined as the brand itself.",
@@ -121,7 +121,7 @@ const WorkPage = () => {
     {
       title: "Diamond Padel club",
       category: "social media",
-      image: "/projects/analytics.jpg",
+      image: "/assets/brands/dpc.jpg",
       icon: <FaRobot />,
       description:
         "We managed Diamond Padel’s account with a focus on blending sport, style, and community. From content strategy to daily execution, we brought the club’s energy and premium vibe to every post",
@@ -131,7 +131,7 @@ const WorkPage = () => {
     {
       title: "Tarta de Amor",
       category: "design",
-      image: "/projects/corporate.jpg",
+      image: "/assets/brands/tarta.png",
       icon: <FaGlobe />,
       description:
         "We built a bold brand identity that reflects its cutting-edge printing tech and transformative potential. From logo to story, every element was designed to speak innovation without borders.",
@@ -141,7 +141,7 @@ const WorkPage = () => {
     {
       title: "Unframed breaks the mold",
       category: "design",
-      image: "/projects/investment.jpg",
+      image: "/assets/brands/unframed.png",
       icon: <FaChartLine />,
       description:
         "We built a bold brand identity that reflects its cutting-edge printing tech and transformative potential. From logo to story, every element was designed to speak innovation without borders.",
@@ -151,7 +151,7 @@ const WorkPage = () => {
     {
       title: "H & M",
       category: "media production",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/H&M.png",
       icon: <FaPaintBrush />,
       description:
         "We delivered full in-house video production for H&M, from concept to final cut. The shoot captured their bold, expressive style with energy and precision. ",
@@ -161,7 +161,7 @@ const WorkPage = () => {
     {
       title: "Shift inc.",
       category: "media production",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/shift.png",
       icon: <FaPaintBrush />,
       description:
         "We created a full-scale brand video for SHIFT Inc., capturing their seamless tech-driven approach to smart mobility. The project was managed entirely in-house from concept to final edit with precision and speed. A future-focused production that reflects their Vision 2030 ambition. ",
@@ -171,7 +171,7 @@ const WorkPage = () => {
     {
       title: "Saccess Perfume",
       category: "shopify",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/saccess.png",
       icon: <FaPaintBrush />,
       description:
         "We launched a fully customized Shopify store for luxury Parfum. From structure to checkout, every step was optimized for luxury and ease. A seamless shopping flow built to elevate the customer experience.",
@@ -221,7 +221,7 @@ const WorkPage = () => {
     {
       title: "Evolve",
       category: "mobile",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/evolve.png",
       icon: <FaPaintBrush />,
       description:
         "We created a smart, user-first fitness platform. From UI/UX design to development, every step was handled in-house to ensure a seamless, intuitive experience that empowers users to train smarter, eat better, and stay on track.",

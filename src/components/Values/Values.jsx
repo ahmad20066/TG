@@ -106,7 +106,7 @@ const Values = () => {
 
         <motion.div
           className="values-grid"
-          variants={containerVariants}
+          // variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -115,7 +115,7 @@ const Values = () => {
             <motion.div
               key={index}
               className="value-card"
-              variants={cardVariants}
+              // variants={cardVariants}
               whileHover={{
                 y: -8,
                 transition: {
@@ -135,10 +135,16 @@ const Values = () => {
                 >
                   {value.icon}
                 </motion.span>
-                <motion.h3 className="value-title" variants={titleVariants}>
+                <motion.h3
+                  className="value-title"
+                  //  variants={titleVariants}
+                >
                   {value.title}
                 </motion.h3>
-                <motion.p className="value-subtitle" variants={titleVariants}>
+                <motion.p
+                  className="value-subtitle"
+                  // variants={titleVariants}
+                >
                   {value.subtitle}
                 </motion.p>
               </div>
