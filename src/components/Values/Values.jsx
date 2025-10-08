@@ -1,28 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./Values.css";
 
 const Values = () => {
+  const { t } = useTranslation();
+
   const values = [
     {
       icon: "⭐",
-      title: "Excellence",
-      subtitle: "Striving for the highest standards in everything we do",
+      title: t("values.excellence.title"),
+      subtitle: t("values.excellence.subtitle"),
     },
     {
       icon: "🚀",
-      title: "Innovation",
-      subtitle: "Pushing boundaries and embracing new possibilities",
+      title: t("values.innovation.title"),
+      subtitle: t("values.innovation.subtitle"),
     },
     {
       icon: "💥",
-      title: "Impact",
-      subtitle: "Creating meaningful change in the MENA region",
+      title: t("values.impact.title"),
+      subtitle: t("values.impact.subtitle"),
     },
     {
       icon: "🤝",
-      title: "Integrity",
-      subtitle: "Maintaining the highest ethical standards",
+      title: t("values.integrity.title"),
+      subtitle: t("values.integrity.subtitle"),
     },
   ];
 
@@ -91,7 +94,7 @@ const Values = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Our Values
+            {t("values.title")}
           </motion.h2>
           <motion.p
             className="values-subtitle"
@@ -100,7 +103,7 @@ const Values = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            The principles that drive everything we do at TG MENA
+            {t("values.subtitle")}
           </motion.p>
         </motion.div>
 

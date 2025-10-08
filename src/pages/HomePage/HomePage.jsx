@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./HomePage.css";
 import Header from "../../components/Header/Header";
 import Values from "../../components/Values/Values";
@@ -11,6 +12,7 @@ import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
   const canvasRef = useRef(null);
+  const { t } = useTranslation();
 
   // Particle animation
   useEffect(() => {
@@ -98,8 +100,8 @@ const HomePage = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [cursorVisible, setCursorVisible] = useState(true);
 
-  const baseText = "Transforming Ideas Into ";
-  const words = ["Digital Reality", "Success Stories"];
+  const baseText = t("hero.title") + " ";
+  const words = [t("hero.word1"), t("hero.word2")];
 
   // Cursor blinking effect
   useEffect(() => {
@@ -179,7 +181,7 @@ const HomePage = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
                 >
-                  <span className="tag-text">Towards Greatness</span>
+                  <span className="tag-text">{t("hero.tag")}</span>
                 </motion.div>
                 <motion.h1
                   className="hero-title"
@@ -201,9 +203,7 @@ const HomePage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.9 }}
                 >
-                  We are a leading digital transformation company in the MENA
-                  region, helping businesses innovate and grow in the digital
-                  age.
+                  {t("hero.subtitle")}
                 </motion.p>
               </motion.div>
             </div>
@@ -241,13 +241,13 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Our Approach
+                {t("approach.title")}
               </motion.h2>
               <div className="stats">
                 {[
-                  { number: "2+", label: "Years of Excellence" },
-                  { number: "8+", label: "Projects Delivered" },
-                  { number: "15+", label: "Expert Team Members" },
+                  { number: "2+", label: t("approach.stats.years") },
+                  { number: "8+", label: t("approach.stats.projects") },
+                  { number: "15+", label: t("approach.stats.team") },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}
@@ -294,24 +294,20 @@ const HomePage = () => {
             >
               {[
                 {
-                  title: "Discovery & Planning",
-                  description:
-                    "Understanding your needs and creating a roadmap for success",
+                  title: t("approach.discovery.title"),
+                  description: t("approach.discovery.description"),
                 },
                 {
-                  title: "Design & Development",
-                  description:
-                    "Creating innovative solutions with cutting-edge technology",
+                  title: t("approach.design.title"),
+                  description: t("approach.design.description"),
                 },
                 {
-                  title: "Testing & Quality",
-                  description:
-                    "Ensuring excellence through rigorous testing procedures",
+                  title: t("approach.testing.title"),
+                  description: t("approach.testing.description"),
                 },
                 {
-                  title: "Launch & Support",
-                  description:
-                    "Delivering results and providing continuous improvement",
+                  title: t("approach.launch.title"),
+                  description: t("approach.launch.description"),
                 },
               ].map((card, index) => (
                 <motion.div

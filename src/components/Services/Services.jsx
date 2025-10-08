@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./Services.css";
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const servicesGridRef = useRef(null);
@@ -13,54 +15,50 @@ const Services = () => {
   const services = [
     {
       icon: "📣",
-      title: "Marketing & Communication",
-      description:
-        "Helping brands tell their story, reach the right audience, and build strong connections through smart strategies.",
+      title: t("services.marketing.title"),
+      description: t("services.marketing.description"),
       items: [
-        "Brand Strategy",
-        "Social media campaigns (paid/org)",
-        "Content creation",
-        "Accounts management",
-        "Communication Planning",
-        "Create a business concept",
+        t("services.marketing.items.brandStrategy"),
+        t("services.marketing.items.socialMedia"),
+        t("services.marketing.items.contentCreation"),
+        t("services.marketing.items.accountsManagement"),
+        t("services.marketing.items.communicationPlanning"),
+        t("services.marketing.items.businessConcept"),
       ],
     },
     {
       icon: "🎨",
-      title: "Creative designs",
-      description:
-        "Bringing ideas to life with visuals that inspire, engage, and leave a lasting impression.",
+      title: t("services.creative.title"),
+      description: t("services.creative.description"),
       items: [
-        "Branding",
-        "Logo",
-        "Guideline",
-        "Presentation or profile",
-        "Social media",
+        t("services.creative.items.branding"),
+        t("services.creative.items.logo"),
+        t("services.creative.items.guideline"),
+        t("services.creative.items.presentation"),
+        t("services.creative.items.socialMedia"),
       ],
     },
     {
       icon: "🎥",
-      title: "Media Production",
-      description:
-        "From videos to photography, we craft high-quality content that captures attention and drives impact.",
+      title: t("services.production.title"),
+      description: t("services.production.description"),
       items: [
-        "Videography",
-        "Photography",
-        "Motion Graphics",
-        "CGI / 3D",
-        "Props & Sets",
+        t("services.production.items.videography"),
+        t("services.production.items.photography"),
+        t("services.production.items.motionGraphics"),
+        t("services.production.items.cgi"),
+        t("services.production.items.props"),
       ],
     },
     {
       icon: "⚡",
-      title: "Tech",
-      description:
-        "Delivering innovative digital solutions that make your business smarter, faster, and more connected.",
+      title: t("services.tech.title"),
+      description: t("services.tech.description"),
       items: [
-        "Websites & Landing Pages",
-        "Shopify Stores",
-        "UI/UX Design",
-        "Custom Applications",
+        t("services.tech.items.websites"),
+        t("services.tech.items.shopify"),
+        t("services.tech.items.uiux"),
+        t("services.tech.items.customApps"),
       ],
     },
   ];
@@ -207,7 +205,7 @@ const Services = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Our Services
+            {t("services.title")}
           </motion.h2>
           <motion.p
             className="services-subtitle"
@@ -216,7 +214,7 @@ const Services = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Innovative solutions for modern businesses
+            {t("services.subtitle")}
           </motion.p>
         </motion.div>
 

@@ -83,6 +83,7 @@
 .header-nav {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 
 .nav-list {
@@ -91,6 +92,71 @@
     margin: 0;
     padding: 0;
     gap: 2rem;
+}
+
+/* Language Toggle Button */
+.language-toggle {
+    background: rgba(229, 9, 20, 0.1);
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    color: var(--pure-white);
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(229, 9, 20, 0.2);
+}
+
+.language-toggle:hover {
+    background: rgba(229, 9, 20, 0.2);
+    border-color: rgba(229, 9, 20, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+}
+
+.language-toggle .language-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile Language Toggle */
+.mobile-language-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.mobile-language-toggle {
+    background: none;
+    border: none;
+    color: var(--pure-white);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+}
+
+.mobile-language-toggle:hover {
+    color: var(--crimson-red);
+    background: rgba(229, 9, 20, 0.1);
+    border-left-color: var(--crimson-red);
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 4px 16px rgba(229, 9, 20, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .nav-item {

@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./FeaturedProjects.css";
 import { useNavigate } from "react-router-dom";
 
 const FeaturedProjects = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const projectsGridRef = useRef(null);
@@ -13,50 +15,37 @@ const FeaturedProjects = () => {
   const projects = [
     {
       id: "fane",
-      title: "Fane",
-      category: "Social Media & Lifestyle",
-      description:
-        "We handled full account management for FANE,shaping a digital presence that matched their bold, street-smart identity. From content planning to daily execution, every detail was aligned with their brand culture",
+      title: t("featuredProjects.projects.fane.title"),
+      category: t("featuredProjects.projects.fane.category"),
+      description: t("featuredProjects.projects.fane.description"),
       image: "/assets/brands/fane.png",
     },
     {
       id: "unframed",
-      title: "Unframed breaks the mold",
-      category: "Branding & Design",
-      description:
-        "We built a bold brand identity that reflects its cutting-edge printing tech and transformative potential. From logo to story, every element was designed to speak innovation without borders",
+      title: t("featuredProjects.projects.unframed.title"),
+      category: t("featuredProjects.projects.unframed.category"),
+      description: t("featuredProjects.projects.unframed.description"),
       image: "/assets/brands/unframed.png",
     },
     {
       id: "pebble",
-      title: "Pebble",
-      category: "Web development & UI/UX",
-      description:
-        "We developed a high-performing landing page for Pebble Life, built to drive action and engagement. From layout to responsiveness, every detail was crafted for clarity and speed. A focused digital experience designed to convert.",
-      image: "/projects/rr-bespoke.jpg",
+      title: t("featuredProjects.projects.pebble.title"),
+      category: t("featuredProjects.projects.pebble.category"),
+      description: t("featuredProjects.projects.pebble.description"),
+      image: "/assets/brands/pebble.png",
     },
     {
       id: "h&m",
-      title: "H&M",
-      category: "Video production",
-      description:
-        "We delivered full in-house video production for H&M, from concept to final cut. The shoot captured their bold, expressive style with energy and precision.",
-      image: "/projects/fleet-management.jpg",
-    },
-    {
-      id: "origin",
-      title: "ORIGIN",
-      category: "Shopify & E-commerce",
-      description:
-        "We built a fully customized Shopify store for Sports Origin, tailored to their brand and audience. Our team handled everything from UX structure to responsive design and optimized checkout. A high-impact e-commerce experience built for performance, speed, and style.",
-      image: "/projects/fleet-management.jpg",
+      title: t("featuredProjects.projects.hm.title"),
+      category: t("featuredProjects.projects.hm.category"),
+      description: t("featuredProjects.projects.hm.description"),
+      image: "/assets/brands/h&m.png",
     },
     {
       id: "Evolve",
-      title: "Evolve",
-      category: "Mobile application & UI/UX",
-      description:
-        "We created a smart, user-first fitness platform. From UI/UX design to development, every step was handled in-house to ensure a seamless, intuitive experience that empowers users to train smarter, eat better, and stay on track.",
+      title: t("featuredProjects.projects.evolve.title"),
+      category: t("featuredProjects.projects.evolve.category"),
+      description: t("featuredProjects.projects.evolve.description"),
       image: "/assets/brands/evolve.png",
     },
   ];
@@ -125,8 +114,8 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Featured Projects</h2>
-          <p>Transforming visions into digital excellence</p>
+          <h2>{t("featuredProjects.title")}</h2>
+          <p>{t("featuredProjects.subtitle")}</p>
         </motion.div>
 
         <motion.div
@@ -180,8 +169,8 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3>Ready to Transform Your Vision?</h3>
-          <p>Let's create something extraordinary together</p>
+          <h3>{t("featuredProjects.cta.title")}</h3>
+          <p>{t("featuredProjects.cta.subtitle")}</p>
           <motion.button
             className="cta-button"
             onClick={() => navigate("/contact")}
@@ -191,7 +180,7 @@ const FeaturedProjects = () => {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Start Your Project
+            {t("featuredProjects.cta.button")}
           </motion.button>
         </motion.div>
       </div>

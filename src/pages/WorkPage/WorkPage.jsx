@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Header from "../../components/Header/Header";
 import {
   FaGlobe,
@@ -17,6 +18,7 @@ const WorkPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const canvasRef = useRef(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Particle animation
   useEffect(() => {
@@ -103,9 +105,8 @@ const WorkPage = () => {
       category: "social media",
       image: "/assets/brands/fane.png",
       icon: <FaShoppingCart />,
-      description:
-        "We handled full account management for FANE, shaping a digital presence that matched their bold, street-smart identity. From content planning to daily execution, every detail was aligned with their brand culture.",
-      technologies: ["Lifestyle", "Social media", "Barbershop"],
+      description: t("workPage.projects.fane.description"),
+      technologies: t("workPage.projects.fane.tech", { returnObjects: true }),
       link: "#",
     },
     {
@@ -113,9 +114,10 @@ const WorkPage = () => {
       category: "social media",
       image: "/assets/brands/huqqabaz.png",
       icon: <FaMobileAlt />,
-      description:
-        "We managed HuQQabaz’s social presence with a focus on luxury, lifestyle, and experience-driven content. From strategy to daily execution, we crafted a digital voice as refined as the brand itself.",
-      technologies: ["Lifestyle", "Social media", "Restaurant"],
+      description: t("workPage.projects.huqqabaz.description"),
+      technologies: t("workPage.projects.huqqabaz.tech", {
+        returnObjects: true,
+      }),
       link: "#",
     },
     {
@@ -123,9 +125,8 @@ const WorkPage = () => {
       category: "social media",
       image: "/assets/brands/dpc.jpg",
       icon: <FaRobot />,
-      description:
-        "We managed Diamond Padel’s account with a focus on blending sport, style, and community. From content strategy to daily execution, we brought the club’s energy and premium vibe to every post",
-      technologies: ["Lifestyle", "Social media", "Sports"],
+      description: t("workPage.projects.dpc.description"),
+      technologies: t("workPage.projects.dpc.tech", { returnObjects: true }),
       link: "#",
     },
     {
@@ -133,9 +134,8 @@ const WorkPage = () => {
       category: "design",
       image: "/assets/brands/tarta.png",
       icon: <FaGlobe />,
-      description:
-        "We built a bold brand identity that reflects its cutting-edge printing tech and transformative potential. From logo to story, every element was designed to speak innovation without borders.",
-      technologies: ["Logo", "Visual identity", "Sweets"],
+      description: t("workPage.projects.tarta.description"),
+      technologies: t("workPage.projects.tarta.tech", { returnObjects: true }),
       link: "#",
     },
     {
@@ -143,9 +143,10 @@ const WorkPage = () => {
       category: "design",
       image: "/assets/brands/unframed.png",
       icon: <FaChartLine />,
-      description:
-        "We built a bold brand identity that reflects its cutting-edge printing tech and transformative potential. From logo to story, every element was designed to speak innovation without borders.",
-      technologies: [" Creative service", "Visual identity"],
+      description: t("workPage.projects.unframed.description"),
+      technologies: t("workPage.projects.unframed.tech", {
+        returnObjects: true,
+      }),
       link: "#",
     },
     {
@@ -153,9 +154,8 @@ const WorkPage = () => {
       category: "media production",
       image: "/assets/brands/H&M.png",
       icon: <FaPaintBrush />,
-      description:
-        "We delivered full in-house video production for H&M, from concept to final cut. The shoot captured their bold, expressive style with energy and precision. ",
-      technologies: ["Fashion", "Production"],
+      description: t("workPage.projects.hm.description"),
+      technologies: t("workPage.projects.hm.tech", { returnObjects: true }),
       link: "#",
     },
     {
@@ -163,9 +163,8 @@ const WorkPage = () => {
       category: "media production",
       image: "/assets/brands/shift.png",
       icon: <FaPaintBrush />,
-      description:
-        "We created a full-scale brand video for SHIFT Inc., capturing their seamless tech-driven approach to smart mobility. The project was managed entirely in-house from concept to final edit with precision and speed. A future-focused production that reflects their Vision 2030 ambition. ",
-      technologies: ["Rental car", "Production"],
+      description: t("workPage.projects.shift.description"),
+      technologies: t("workPage.projects.shift.tech", { returnObjects: true }),
       link: "#",
     },
     {
@@ -173,49 +172,41 @@ const WorkPage = () => {
       category: "shopify",
       image: "/assets/brands/saccess.png",
       icon: <FaPaintBrush />,
-      description:
-        "We launched a fully customized Shopify store for luxury Parfum. From structure to checkout, every step was optimized for luxury and ease. A seamless shopping flow built to elevate the customer experience.",
-      technologies: ["Website", "luxury Parfum", "Shopify"],
-      link: "#",
-    },
-    {
-      title: "ORIGIN",
-      category: "shopify",
-      image: "/projects/design.jpg",
-      icon: <FaPaintBrush />,
-      description:
-        "We built a fully customized Shopify store for Sports Origin, tailored to their brand and audience. Our team handled everything from UX structure to responsive design and optimized checkout. A high-impact e-commerce experience built for performance, speed, and style.",
-      technologies: ["Website", "Sports Equipment", "Shopify"],
+      description: t("workPage.projects.saccess.description"),
+      technologies: t("workPage.projects.saccess.tech", {
+        returnObjects: true,
+      }),
       link: "#",
     },
     {
       title: "Pebble",
       category: "web",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/Pebble.png",
       icon: <FaPaintBrush />,
-      description:
-        "We developed a high-performing landing page for Pebble Life, built to drive action and engagement. From layout to responsiveness, every detail was crafted for clarity and speed. A focused digital experience designed to convert.",
-      technologies: ["Website", "UI/UX", "Electric trailer"],
+      description: t("workPage.projects.pebble.description"),
+      technologies: t("workPage.projects.pebble.tech", { returnObjects: true }),
       link: "#",
     },
     {
       title: "منصة تحكيم",
       category: "web",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/Tahkeem.png",
       icon: <FaPaintBrush />,
-      description:
-        "We reimagined the Tahkeem platform to elevate its legal case management experience. The UI/UX was fully redesigned in-house, creating a smoother, smarter, and more intuitive workflow. The result? A system built to perform—with functionality that adapts to real legal demands.",
-      technologies: ["Website", "UI/UX", "legal case management"],
+      description: t("workPage.projects.tahkeem.description"),
+      technologies: t("workPage.projects.tahkeem.tech", {
+        returnObjects: true,
+      }),
       link: "#",
     },
     {
       title: "EvenTek",
       category: "mobile",
-      image: "/projects/design.jpg",
+      image: "/assets/brands/Eventek.jpeg",
       icon: <FaPaintBrush />,
-      description:
-        "We designed and developed a smart event-planning app with a fully intuitive interface. The UI/UX was crafted in-house to ensure a smooth, end-to-end user experience.",
-      technologies: ["Mobile Application ", "UI/UX", "Event Management"],
+      description: t("workPage.projects.eventek.description"),
+      technologies: t("workPage.projects.eventek.tech", {
+        returnObjects: true,
+      }),
       link: "#",
     },
     {
@@ -223,25 +214,22 @@ const WorkPage = () => {
       category: "mobile",
       image: "/assets/brands/evolve.png",
       icon: <FaPaintBrush />,
-      description:
-        "We created a smart, user-first fitness platform. From UI/UX design to development, every step was handled in-house to ensure a seamless, intuitive experience that empowers users to train smarter, eat better, and stay on track.",
-      technologies: [
-        "Mobile Application ",
-        "UI/UX",
-        "Fitness & Personal Training",
-      ],
+      description: t("workPage.projects.evolve.description"),
+      technologies: t("workPage.projects.evolve.tech", {
+        returnObjects: true,
+      }),
       link: "#",
     },
   ];
 
   const categories = [
-    { id: "all", name: "All Projects" },
-    { id: "web", name: "Web Development" },
-    { id: "mobile", name: "Mobile Apps" },
-    { id: "shopify", name: "Shopify & E-commerce" },
-    { id: "social media", name: "Social Media" },
-    { id: "design", name: "Branding & Design" },
-    { id: "media production", name: "Media Production" },
+    { id: "all", name: t("workPage.categories.all") },
+    { id: "web", name: t("workPage.categories.web") },
+    { id: "mobile", name: t("workPage.categories.mobile") },
+    { id: "shopify", name: t("workPage.categories.shopify") },
+    { id: "social media", name: t("workPage.categories.socialMedia") },
+    { id: "design", name: t("workPage.categories.design") },
+    { id: "media production", name: t("workPage.categories.mediaProduction") },
   ];
 
   const filteredProjects =
@@ -270,23 +258,25 @@ const WorkPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Our Portfolio
+                {t("workPage.hero.tag")}
               </motion.span>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Featured
-                <span className="highlight"> Projects</span>
+                {t("workPage.hero.title")}
+                <span className="highlight">
+                  {" "}
+                  {t("workPage.hero.titleHighlight")}
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Explore our diverse portfolio of successful projects across
-                various industries
+                {t("workPage.hero.description")}
               </motion.p>
             </motion.div>
           </div>
@@ -358,15 +348,15 @@ const WorkPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>Have a Project in Mind?</h2>
-              <p>Let's collaborate to bring your vision to life</p>
+              <h2>{t("workPage.cta.title")}</h2>
+              <p>{t("workPage.cta.subtitle")}</p>
               <motion.button
                 onClick={() => navigate("/contact")}
                 className="cta-button"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start a Project
+                {t("workPage.cta.button")}
               </motion.button>
             </motion.div>
           </div>

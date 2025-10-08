@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Header from "../../components/Header/Header";
 import { useNavigate } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const ServicesPage = () => {
   const [expandedCard, setExpandedCard] = useState(null);
   const canvasRef = useRef(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleCardClick = (index) => {
     if (window.innerWidth <= 768) {
@@ -116,165 +118,119 @@ const ServicesPage = () => {
   const services = [
     {
       icon: <FaSearchDollar />,
-      title: "Digital Marketing",
-      description:
-        "Strategic digital marketing solutions to boost your online presence and drive growth.",
-      features: [
-        "Search Engine Optimization (SEO)",
-        "Pay-Per-Click Advertising (PPC)",
-        "Content Marketing Strategy",
-        "Marketing Analytics & Reporting",
-      ],
+      title: t("servicesPage.services.digitalMarketing.title"),
+      description: t("servicesPage.services.digitalMarketing.description"),
+      features: t("servicesPage.services.digitalMarketing.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaBullhorn />,
-      title: "Social Media Marketing",
-      description:
-        "Comprehensive social media management and marketing campaigns.",
-      features: [
-        "Social Media Strategy",
-        "Content Creation & Curation",
-        "Community Management",
-        "Social Media Advertising",
-      ],
+      title: t("servicesPage.services.socialMedia.title"),
+      description: t("servicesPage.services.socialMedia.description"),
+      features: t("servicesPage.services.socialMedia.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaChartBar />,
-      title: "Brand Development",
-      description:
-        "Build and strengthen your brand identity across all digital platforms.",
-      features: [
-        "Brand Strategy",
-        "Visual Identity Design",
-        "Brand Guidelines",
-        "Brand Voice Development",
-      ],
+      title: t("servicesPage.services.brandDevelopment.title"),
+      description: t("servicesPage.services.brandDevelopment.description"),
+      features: t("servicesPage.services.brandDevelopment.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaHashtag />,
-      title: "Influencer Marketing",
-      description:
-        "Connect with influential voices to amplify your brand message.",
-      features: [
-        "Influencer Outreach",
-        "Campaign Management",
-        "Performance Tracking",
-        "ROI Analysis",
-      ],
+      title: t("servicesPage.services.influencer.title"),
+      description: t("servicesPage.services.influencer.description"),
+      features: t("servicesPage.services.influencer.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaVideo />,
-      title: "Content Creation",
-      description: "Engaging multimedia content that tells your brand story.",
-      features: [
-        "Video Production",
-        "Photography",
-        "Graphic Design",
-        "Animation",
-      ],
+      title: t("servicesPage.services.contentCreation.title"),
+      description: t("servicesPage.services.contentCreation.description"),
+      features: t("servicesPage.services.contentCreation.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaPencilAlt />,
-      title: "Copywriting & Content",
-      description:
-        "Compelling content that engages your audience and drives action.",
-      features: [
-        "Website Copy",
-        "Blog Writing",
-        "Email Marketing",
-        "Social Media Content",
-      ],
+      title: t("servicesPage.services.copywriting.title"),
+      description: t("servicesPage.services.copywriting.description"),
+      features: t("servicesPage.services.copywriting.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaCode />,
-      title: "Web Development",
-      description:
-        "Custom web applications with cutting-edge technologies and modern frameworks.",
-      features: [
-        "Responsive Design",
-        "Progressive Web Apps",
-        "E-commerce Solutions",
-        "Content Management Systems",
-      ],
+      title: t("servicesPage.services.webDev.title"),
+      description: t("servicesPage.services.webDev.description"),
+      features: t("servicesPage.services.webDev.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaMobileAlt />,
-      title: "Mobile Development",
-      description:
-        "Native and cross-platform mobile applications for iOS and Android.",
-      features: [
-        "iOS Development",
-        "Android Development",
-        "Cross-platform Solutions",
-        "Mobile UI/UX Design",
-      ],
+      title: t("servicesPage.services.mobileDev.title"),
+      description: t("servicesPage.services.mobileDev.description"),
+      features: t("servicesPage.services.mobileDev.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaPaintBrush />,
-      title: "UI/UX Design",
-      description:
-        "User-centered design solutions that drive engagement and satisfaction.",
-      features: [
-        "User Interface Design",
-        "User Experience Design",
-        "Prototyping",
-        "Design Systems",
-      ],
+      title: t("servicesPage.services.uiux.title"),
+      description: t("servicesPage.services.uiux.description"),
+      features: t("servicesPage.services.uiux.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaDatabase />,
-      title: "Database Solutions",
-      description: "Robust database architecture and management systems.",
-      features: [
-        "Database Design",
-        "Data Migration",
-        "Performance Optimization",
-        "Data Security",
-      ],
+      title: t("servicesPage.services.database.title"),
+      description: t("servicesPage.services.database.description"),
+      features: t("servicesPage.services.database.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaCloud />,
-      title: "Cloud Services",
-      description: "Scalable cloud solutions for modern business needs.",
-      features: [
-        "Cloud Migration",
-        "AWS/Azure/GCP",
-        "Cloud Architecture",
-        "DevOps",
-      ],
+      title: t("servicesPage.services.cloud.title"),
+      description: t("servicesPage.services.cloud.description"),
+      features: t("servicesPage.services.cloud.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaRobot />,
-      title: "AI",
-      description: "Intelligent solutions powered by advanced AI technologies.",
-      features: [
-        "Predictive Analytics",
-        "Natural Language Processing",
-        "Computer Vision",
-        "Machine Learning Models",
-      ],
+      title: t("servicesPage.services.ai.title"),
+      description: t("servicesPage.services.ai.description"),
+      features: t("servicesPage.services.ai.features", { returnObjects: true }),
     },
   ];
 
   const technologies = [
     {
       icon: <FaCode />,
-      name: "Development",
+      name: t("servicesPage.technologies.development"),
       items: ["React js", "Flutter", "Node js", "Laravel"],
     },
     {
       icon: <FaSearchDollar />,
-      name: "Marketing",
+      name: t("servicesPage.technologies.marketing"),
       items: ["Google Ads", "Facebook Ads", "SEMrush", "HubSpot"],
     },
     {
       icon: <FaChartBar />,
-      name: "Analytics",
+      name: t("servicesPage.technologies.analytics"),
       items: ["Google Analytics", "Mixpanel", "Hotjar", "Tableau"],
     },
     {
       icon: <FaBullhorn />,
-      name: "Social Media",
+      name: t("servicesPage.technologies.socialMedia"),
       items: ["Buffer", "Hootsuite", "Sprout Social", "Canva"],
     },
   ];
@@ -300,24 +256,25 @@ const ServicesPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Our Expertise
+                {t("servicesPage.hero.tag")}
               </motion.span>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Digital Solutions for
-                <span className="highlight"> Modern Businesses</span>
+                {t("servicesPage.hero.title")}
+                <span className="highlight">
+                  {" "}
+                  {t("servicesPage.hero.titleHighlight")}
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                From web development to digital marketing, we deliver
-                comprehensive solutions that drive growth and innovation in the
-                digital age.
+                {t("servicesPage.hero.description")}
               </motion.p>
               <motion.div
                 className="hero-stats"
@@ -326,9 +283,15 @@ const ServicesPage = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 {[
-                  { number: "8+", label: "Projects Completed" },
-                  { number: "15+", label: "Expert Team Members" },
-                  { number: "98%", label: "Client Satisfaction" },
+                  {
+                    number: "8+",
+                    label: t("servicesPage.hero.stats.projects"),
+                  },
+                  { number: "15+", label: t("servicesPage.hero.stats.team") },
+                  {
+                    number: "98%",
+                    label: t("servicesPage.hero.stats.satisfaction"),
+                  },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
@@ -390,9 +353,9 @@ const ServicesPage = () => {
         {/* Service Categories Navigation */}
         <section className="service-categories">
           <div className="section-container">
-            <h2>Explore Our Services</h2>
+            <h2>{t("servicesPage.categories.title")}</h2>
             <p className="section-description">
-              Dive deeper into our specialized service offerings
+              {t("servicesPage.categories.subtitle")}
             </p>
             <div className="categories-grid">
               <motion.div
@@ -407,16 +370,14 @@ const ServicesPage = () => {
                   <FaBullhorn />
                 </div>
                 <div className="category-content">
-                  <h3>Marketing & Communication</h3>
-                  <p>
-                    Strategic marketing solutions to boost your online presence
-                    and drive growth through targeted campaigns.
-                  </p>
+                  <h3>{t("servicesPage.categories.marketing.title")}</h3>
+                  <p>{t("servicesPage.categories.marketing.description")}</p>
                   <ul className="category-highlights">
-                    <li>Digital Marketing</li>
-                    <li>Social Media Management</li>
-                    <li>Brand Development</li>
-                    <li>Content Creation</li>
+                    {t("servicesPage.categories.marketing.highlights", {
+                      returnObjects: true,
+                    }).map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
                   </ul>
                   <motion.button
                     className="category-button"
@@ -424,7 +385,7 @@ const ServicesPage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Explore Marketing Services
+                    {t("servicesPage.categories.marketing.button")}
                   </motion.button>
                 </div>
               </motion.div>
@@ -441,16 +402,14 @@ const ServicesPage = () => {
                   <FaCode />
                 </div>
                 <div className="category-content">
-                  <h3>Technology Solutions</h3>
-                  <p>
-                    Cutting-edge technology solutions from web development to AI
-                    implementation for modern businesses.
-                  </p>
+                  <h3>{t("servicesPage.categories.tech.title")}</h3>
+                  <p>{t("servicesPage.categories.tech.description")}</p>
                   <ul className="category-highlights">
-                    <li>Web Development</li>
-                    <li>Mobile Applications</li>
-                    <li>Cloud Solutions</li>
-                    <li>AI & Machine Learning</li>
+                    {t("servicesPage.categories.tech.highlights", {
+                      returnObjects: true,
+                    }).map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
                   </ul>
                   <motion.button
                     className="category-button"
@@ -458,7 +417,7 @@ const ServicesPage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Explore Tech Services
+                    {t("servicesPage.categories.tech.button")}
                   </motion.button>
                 </div>
               </motion.div>
@@ -475,16 +434,14 @@ const ServicesPage = () => {
                   <FaVideo />
                 </div>
                 <div className="category-content">
-                  <h3>Media Production</h3>
-                  <p>
-                    Professional media production services from photography to
-                    video production and CGI visualization.
-                  </p>
+                  <h3>{t("servicesPage.categories.media.title")}</h3>
+                  <p>{t("servicesPage.categories.media.description")}</p>
                   <ul className="category-highlights">
-                    <li>Video Production</li>
-                    <li>Photography</li>
-                    <li>CGI & 3D Rendering</li>
-                    <li>Post-Production</li>
+                    {t("servicesPage.categories.media.highlights", {
+                      returnObjects: true,
+                    }).map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
                   </ul>
                   <motion.button
                     className="category-button"
@@ -492,7 +449,7 @@ const ServicesPage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    Explore Media Services
+                    {t("servicesPage.categories.media.button")}
                   </motion.button>
                 </div>
               </motion.div>
@@ -503,10 +460,9 @@ const ServicesPage = () => {
         {/* Technologies Section */}
         <section className="technologies-section">
           <div className="section-container">
-            <h2>Technologies We Use</h2>
+            <h2>{t("servicesPage.technologies.title")}</h2>
             <p className="section-description">
-              We leverage the latest technologies to deliver cutting-edge
-              solutions
+              {t("servicesPage.technologies.subtitle")}
             </p>
             <div className="tech-grid">
               {technologies.map((tech, index) => (
@@ -542,9 +498,9 @@ const ServicesPage = () => {
         {/* Process Section */}
         <section className="process-section">
           <div className="section-container">
-            <h2>Our Process</h2>
+            <h2>{t("servicesPage.process.title")}</h2>
             <p className="section-description">
-              A systematic approach to delivering exceptional results
+              {t("servicesPage.process.subtitle")}
             </p>
             <div className="timeline-container">
               <div className="timeline-line">
@@ -554,29 +510,34 @@ const ServicesPage = () => {
                 {[
                   {
                     icon: <FaChartLine />,
-                    title: "Discovery & Planning",
-                    description:
-                      "Understanding your needs and creating a roadmap for success",
+                    title: t("servicesPage.process.steps.discovery.title"),
+                    description: t(
+                      "servicesPage.process.steps.discovery.description"
+                    ),
                     step: "01",
                   },
                   {
                     icon: <FaPaintBrush />,
-                    title: "Design & Prototyping",
-                    description:
-                      "Creating intuitive designs and interactive prototypes",
+                    title: t("servicesPage.process.steps.design.title"),
+                    description: t(
+                      "servicesPage.process.steps.design.description"
+                    ),
                     step: "02",
                   },
                   {
                     icon: <FaCode />,
-                    title: "Development",
-                    description:
-                      "Building robust solutions with clean, efficient code",
+                    title: t("servicesPage.process.steps.development.title"),
+                    description: t(
+                      "servicesPage.process.steps.development.description"
+                    ),
                     step: "03",
                   },
                   {
                     icon: <FaShieldAlt />,
-                    title: "Testing & Launch",
-                    description: "Rigorous testing and smooth deployment",
+                    title: t("servicesPage.process.steps.testing.title"),
+                    description: t(
+                      "servicesPage.process.steps.testing.description"
+                    ),
                     step: "04",
                   },
                 ].map((step, index) => (
@@ -603,7 +564,6 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="cta-section">
           <div className="section-container">
             <motion.div
@@ -613,8 +573,8 @@ const ServicesPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>Ready to Start Your Project?</h2>
-              <p>Let's discuss how we can help bring your ideas to life</p>
+              <h2>{t("servicesPage.cta.title")}</h2>
+              <p>{t("servicesPage.cta.subtitle")}</p>
               <motion.button
                 className="cta-button"
                 onClick={() => navigate("/contact")}
@@ -624,7 +584,7 @@ const ServicesPage = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Contact Us
+                {t("servicesPage.cta.button")}
               </motion.button>
             </motion.div>
           </div>

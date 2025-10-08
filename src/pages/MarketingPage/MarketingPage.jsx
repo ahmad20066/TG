@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaBullhorn,
   FaPaintBrush,
@@ -19,6 +20,7 @@ import "./MarketingPage.css";
 const MarketingPage = () => {
   const [expandedCard, setExpandedCard] = useState(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const canvasRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -121,136 +123,36 @@ const MarketingPage = () => {
   const marketingSubServices = [
     {
       icon: <FaBullhorn />,
-      title: "Social Media Marketing",
-      description:
-        "Build your brand presence across all major social platforms with engaging content and strategic campaigns.",
-      features: [
-        "Content Creation",
-        "Community Management",
-        "Paid Advertising",
-        "Analytics & Reporting",
-      ],
+      title: t("marketingPage.services.socialMedia.title"),
+      description: t("marketingPage.services.socialMedia.description"),
+      features: t("marketingPage.services.socialMedia.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaPaintBrush />,
-      title: "Brand Strategy & Design",
-      description:
-        "Create a compelling brand identity that resonates with your audience and stands out in the market.",
-      features: [
-        "Brand Identity",
-        "Logo Design",
-        "Brand Guidelines",
-        "Visual Storytelling",
-      ],
+      title: t("marketingPage.services.brandStrategy.title"),
+      description: t("marketingPage.services.brandStrategy.description"),
+      features: t("marketingPage.services.brandStrategy.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaChartLine />,
-      title: "Digital Advertising",
-      description:
-        "Drive targeted traffic and conversions through strategic paid advertising campaigns.",
-      features: [
-        "Google Ads",
-        "Facebook Ads",
-        "LinkedIn Ads",
-        "Campaign Optimization",
-      ],
+      title: t("marketingPage.services.digitalAds.title"),
+      description: t("marketingPage.services.digitalAds.description"),
+      features: t("marketingPage.services.digitalAds.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaUsers />,
-      title: "Content Marketing",
-      description:
-        "Engage your audience with valuable, relevant content that drives action and builds trust.",
-      features: [
-        "Content Strategy",
-        "Blog Writing",
-        "Video Content",
-        "Email Marketing",
-      ],
+      title: t("marketingPage.services.contentMarketing.title"),
+      description: t("marketingPage.services.contentMarketing.description"),
+      features: t("marketingPage.services.contentMarketing.features", {
+        returnObjects: true,
+      }),
     },
-  ];
-
-  const marketingProcess = [
-    {
-      step: "01",
-      title: "Discovery & Strategy",
-      description:
-        "We dive deep into your business, audience, and goals to create a tailored marketing strategy.",
-    },
-    {
-      step: "02",
-      title: "Creative Development",
-      description:
-        "Our team crafts compelling content, designs, and campaigns that align with your brand vision.",
-    },
-    {
-      step: "03",
-      title: "Launch & Execute",
-      description:
-        "We implement your marketing campaigns across chosen channels with precision and timing.",
-    },
-    {
-      step: "04",
-      title: "Monitor & Optimize",
-      description:
-        "Continuous monitoring and data-driven optimization to maximize your marketing ROI.",
-    },
-  ];
-
-  const marketingBenefits = [
-    {
-      icon: <FaRocket />,
-      title: "Accelerated Growth",
-      description:
-        "Strategic marketing that drives rapid business growth and market expansion.",
-    },
-    {
-      icon: <FaLightbulb />,
-      title: "Creative Excellence",
-      description:
-        "Award-winning creative campaigns that capture attention and drive engagement.",
-    },
-    {
-      icon: <FaChartLine />,
-      title: "Data-Driven Results",
-      description:
-        "Marketing decisions backed by analytics and measurable performance metrics.",
-    },
-    {
-      icon: <FaUsers />,
-      title: "Expert Team",
-      description:
-        "Dedicated marketing professionals with proven track records across industries.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      company: "TechStart Inc.",
-      text: "TG transformed our marketing approach completely. Our brand visibility increased by 300% in just 6 months.",
-      rating: 5,
-    },
-    {
-      name: "Ahmed Al-Rashid",
-      company: "Gulf Enterprises",
-      text: "The creative campaigns they developed for us were exceptional. ROI exceeded all expectations.",
-      rating: 5,
-    },
-    {
-      name: "Maria Rodriguez",
-      company: "Fashion Forward",
-      text: "Professional, creative, and results-driven. TG is our go-to marketing partner.",
-      rating: 5,
-    },
-  ];
-
-  const clientLogos = [
-    { name: "TechStart", logo: "/clients/techstart.png" },
-    { name: "Gulf Enterprises", logo: "/clients/gulf.png" },
-    { name: "Fashion Forward", logo: "/clients/fashion.png" },
-    { name: "Digital Solutions", logo: "/clients/digital.png" },
-    { name: "Innovation Hub", logo: "/clients/innovation.png" },
-    { name: "Future Corp", logo: "/clients/future.png" },
   ];
 
   return (
@@ -274,24 +176,25 @@ const MarketingPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Marketing & Communication
+                {t("marketingPage.hero.tag")}
               </motion.span>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Strategic Marketing for
-                <span className="highlight"> Modern Brands</span>
+                {t("marketingPage.hero.title")}
+                <span className="highlight">
+                  {" "}
+                  {t("marketingPage.hero.titleHighlight")}
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Helping brands tell their story, reach the right audience, and
-                build strong connections through smart strategies that drive
-                real results.
+                {t("marketingPage.hero.description")}
               </motion.p>
               {/* <motion.div
                 className="hero-stats"
@@ -325,9 +228,9 @@ const MarketingPage = () => {
         {/* Main Marketing Services Section */}
         <section className="main-services">
           <div className="section-container">
-            <h2>Our Marketing Services</h2>
+            <h2>{t("marketingPage.services.title")}</h2>
             <p className="section-description">
-              Comprehensive marketing solutions tailored to your business needs
+              {t("marketingPage.services.subtitle")}
             </p>
             <div className="services-grid">
               {marketingSubServices.map((service, index) => (
@@ -369,42 +272,39 @@ const MarketingPage = () => {
         {/* Marketing Tools & Technologies Section */}
         <section className="technologies-section">
           <div className="section-container">
-            <h2>Marketing Tools We Use</h2>
+            <h2>{t("marketingPage.tools.title")}</h2>
             <p className="section-description">
-              We leverage the latest marketing technologies to deliver
-              cutting-edge campaigns
+              {t("marketingPage.tools.subtitle")}
             </p>
             <div className="tech-grid">
               {[
                 {
                   icon: <FaBullhorn />,
-                  name: "Social Media",
-                  items: [
-                    "Facebook Ads",
-                    "Instagram Ads",
-                    "LinkedIn Ads",
-                    "TikTok Ads",
-                  ],
+                  name: t("marketingPage.tools.socialMedia.name"),
+                  items: t("marketingPage.tools.socialMedia.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaChartLine />,
-                  name: "Analytics",
-                  items: [
-                    "Google Analytics",
-                    "Facebook Insights",
-                    "Hootsuite",
-                    "Buffer",
-                  ],
+                  name: t("marketingPage.tools.analytics.name"),
+                  items: t("marketingPage.tools.analytics.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaPaintBrush />,
-                  name: "Design Tools",
-                  items: ["Adobe Creative Suite", "Canva", "Figma", "Sketch"],
+                  name: t("marketingPage.tools.design.name"),
+                  items: t("marketingPage.tools.design.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaUsers />,
-                  name: "Marketing Automation",
-                  items: ["HubSpot", "Mailchimp", "ActiveCampaign", "Zapier"],
+                  name: t("marketingPage.tools.automation.name"),
+                  items: t("marketingPage.tools.automation.items", {
+                    returnObjects: true,
+                  }),
                 },
               ].map((tech, index) => (
                 <motion.div
@@ -439,9 +339,9 @@ const MarketingPage = () => {
         {/* Process Section */}
         <section className="process-section">
           <div className="section-container">
-            <h2>Our Marketing Process</h2>
+            <h2>{t("marketingPage.process.title")}</h2>
             <p className="section-description">
-              A systematic approach to delivering exceptional marketing results
+              {t("marketingPage.process.subtitle")}
             </p>
             <div className="timeline-container">
               <div className="timeline-line">
@@ -451,30 +351,34 @@ const MarketingPage = () => {
                 {[
                   {
                     icon: <FaChartLine />,
-                    title: "Discovery & Strategy",
-                    description:
-                      "We dive deep into your business, audience, and goals to create a tailored marketing strategy",
+                    title: t("marketingPage.process.steps.discovery.title"),
+                    description: t(
+                      "marketingPage.process.steps.discovery.description"
+                    ),
                     step: "01",
                   },
                   {
                     icon: <FaPaintBrush />,
-                    title: "Creative Development",
-                    description:
-                      "Our team crafts compelling content, designs, and campaigns that align with your brand vision",
+                    title: t("marketingPage.process.steps.creative.title"),
+                    description: t(
+                      "marketingPage.process.steps.creative.description"
+                    ),
                     step: "02",
                   },
                   {
                     icon: <FaRocket />,
-                    title: "Launch & Execute",
-                    description:
-                      "We implement your marketing campaigns across chosen channels with precision and timing",
+                    title: t("marketingPage.process.steps.launch.title"),
+                    description: t(
+                      "marketingPage.process.steps.launch.description"
+                    ),
                     step: "03",
                   },
                   {
                     icon: <FaLightbulb />,
-                    title: "Monitor & Optimize",
-                    description:
-                      "Continuous monitoring and data-driven optimization to maximize your marketing ROI",
+                    title: t("marketingPage.process.steps.optimize.title"),
+                    description: t(
+                      "marketingPage.process.steps.optimize.description"
+                    ),
                     step: "04",
                   },
                 ].map((step, index) => (
@@ -511,11 +415,8 @@ const MarketingPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>Ready to Transform Your Marketing?</h2>
-              <p>
-                Let's discuss how we can help elevate your brand and drive
-                growth
-              </p>
+              <h2>{t("marketingPage.cta.title")}</h2>
+              <p>{t("marketingPage.cta.subtitle")}</p>
               <motion.button
                 className="cta-button"
                 onClick={() => navigate("/contact")}
@@ -525,7 +426,7 @@ const MarketingPage = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Started Today
+                {t("marketingPage.cta.button")}
               </motion.button>
             </motion.div>
           </div>

@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./ClientLogos.css";
 
 const ClientLogos = () => {
+  const { t } = useTranslation();
   const companies = ["TAHKEEM", "EVOLVE", "EVENTEK", "UNFRAMED"];
 
   return (
@@ -15,8 +17,8 @@ const ClientLogos = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Trusted by Industry Leaders</h2>
-          <p>Partnering with prestigious brands across the automotive sector</p>
+          <h2>{t("clients.title")}</h2>
+          <p>{t("clients.subtitle")}</p>
         </motion.div>
 
         <div className="logos-container">

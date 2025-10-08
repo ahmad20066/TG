@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   FaLightbulb,
   FaUsers,
@@ -11,69 +12,61 @@ import {
 import "./WhyChooseUs.css";
 
 const WhyChooseUs = () => {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: <FaLightbulb />,
-      title: "Creative Excellence",
-      description:
-        "Our in-house creative team brings fresh perspectives and innovative ideas to every project.",
+      title: t("whyChooseUs.features.creativeExcellence.title"),
+      description: t("whyChooseUs.features.creativeExcellence.description"),
     },
     {
       icon: <FaUsers />,
-      title: "Dedicated Team",
-      description:
-        "Work with our experienced in-house team committed to your project's success.",
+      title: t("whyChooseUs.features.dedicatedTeam.title"),
+      description: t("whyChooseUs.features.dedicatedTeam.description"),
     },
     {
       icon: <FaRocket />,
-      title: "Industry Focus",
-      description:
-        "Deep expertise in MENA region's digital landscape and industry-specific solutions.",
+      title: t("whyChooseUs.features.industryFocus.title"),
+      description: t("whyChooseUs.features.industryFocus.description"),
     },
     {
       icon: <FaCogs />,
-      title: "Custom Solutions",
-      description:
-        "Tailored digital solutions that perfectly align with your business objectives.",
+      title: t("whyChooseUs.features.customSolutions.title"),
+      description: t("whyChooseUs.features.customSolutions.description"),
     },
     {
       icon: <FaChartLine />,
-      title: "Data-Driven",
-      description:
-        "Strategic decisions backed by analytics and market insights.",
+      title: t("whyChooseUs.features.dataDriven.title"),
+      description: t("whyChooseUs.features.dataDriven.description"),
     },
     {
       icon: <FaShieldAlt />,
-      title: "Quality Assured",
-      description:
-        "Rigorous quality control and testing processes for flawless delivery.",
+      title: t("whyChooseUs.features.qualityAssured.title"),
+      description: t("whyChooseUs.features.qualityAssured.description"),
     },
   ];
 
   const processSteps = [
     {
       number: "01",
-      title: "Discovery & Strategy",
-      description:
-        "We dive deep into your business needs and market landscape to create a winning strategy.",
+      title: t("whyChooseUs.process.discovery.title"),
+      description: t("whyChooseUs.process.discovery.description"),
     },
     {
       number: "02",
-      title: "Creative Ideation",
-      description:
-        "Our creative team develops innovative concepts aligned with your brand vision.",
+      title: t("whyChooseUs.process.creative.title"),
+      description: t("whyChooseUs.process.creative.description"),
     },
     {
       number: "03",
-      title: "Design & Development",
-      description:
-        "Expert execution of your project with cutting-edge technologies and best practices.",
+      title: t("whyChooseUs.process.development.title"),
+      description: t("whyChooseUs.process.development.description"),
     },
     {
       number: "04",
-      title: "Testing & Refinement",
-      description:
-        "Rigorous quality assurance to ensure perfect functionality and user experience.",
+      title: t("whyChooseUs.process.testing.title"),
+      description: t("whyChooseUs.process.testing.description"),
     },
   ];
 
@@ -93,7 +86,7 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Why Choose Us
+            {t("whyChooseUs.title")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -101,10 +94,7 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            We become your success partner. By embedding ourselves in your
-            operations, we understand your challenges from the inside out.
-            That’s how we deliver fast, focused solutions with purpose, clarity,
-            and lasting impact. Aligned with your vision. Built to perform.
+            {t("whyChooseUs.subtitle")}
           </motion.p>
         </motion.div>
 

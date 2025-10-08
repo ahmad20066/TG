@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "../../contexts/LanguageContext";
 import logo from "../../assets/logo.svg";
 import "./Header.css";
 
@@ -10,6 +12,8 @@ const Header = () => {
   const { scrollY } = useScroll();
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
+  const { language, toggleLanguage } = useLanguage();
 
   // Transform header background based on scroll
   const headerBackground = useTransform(
@@ -39,11 +43,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Work", path: "/work" },
-    { name: "Contact", path: "/contact" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.about"), path: "/about" },
+    { name: t("nav.services"), path: "/services" },
+    { name: t("nav.work"), path: "/work" },
+    { name: t("nav.contact"), path: "/contact" },
   ];
 
   const handleNavClick = (item) => {
@@ -126,6 +130,21 @@ const Header = () => {
               </motion.li>
             ))}
           </ul>
+
+          {/* Language Toggle Button */}
+          <motion.button
+            className="language-toggle"
+            onClick={toggleLanguage}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <span className="language-text">
+              {language === "en" ? "AR" : "EN"}
+            </span>
+          </motion.button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -199,6 +218,25 @@ const Header = () => {
               </motion.a>
             </motion.li>
           ))}
+          {/* Language Toggle in Mobile Menu */}
+          <motion.li
+            className="mobile-nav-item mobile-language-item"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{
+              opacity: isMobileMenuOpen ? 1 : 0,
+              x: isMobileMenuOpen ? 0 : -20,
+            }}
+            transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
+          >
+            <motion.button
+              className="mobile-language-toggle"
+              onClick={toggleLanguage}
+              whileHover={{ color: "#E50914", x: 10 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {language === "en" ? "العربية" : "English"}
+            </motion.button>
+          </motion.li>
         </motion.ul>
       </motion.div>
     </motion.header>

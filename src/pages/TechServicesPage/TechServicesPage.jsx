@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaCode,
   FaMobileAlt,
@@ -20,6 +21,7 @@ import "./TechServicesPage.css";
 const TechServicesPage = () => {
   const [expandedCard, setExpandedCard] = useState(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const canvasRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -119,164 +121,54 @@ const TechServicesPage = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const portfolioItems = [
-    {
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      description: "Full-stack e-commerce solution with advanced features",
-      image: "/portfolio/ecommerce.jpg",
-    },
-    {
-      title: "Mobile Banking App",
-      category: "Mobile Development",
-      description: "Secure and user-friendly banking application",
-      image: "/portfolio/banking.jpg",
-    },
-    {
-      title: "AI Analytics Dashboard",
-      category: "Enterprise Software",
-      description: "Real-time data analytics with AI insights",
-      image: "/portfolio/analytics.jpg",
-    },
-    {
-      title: "IoT Smart Home",
-      category: "IoT Solutions",
-      description: "Connected home automation system",
-      image: "/portfolio/iot.jpg",
-    },
-    {
-      title: "Cloud Migration",
-      category: "Cloud Services",
-      description: "Enterprise-scale cloud infrastructure",
-      image: "/portfolio/cloud.jpg",
-    },
-    {
-      title: "Blockchain Platform",
-      category: "Blockchain",
-      description: "Decentralized application platform",
-      image: "/portfolio/blockchain.jpg",
-    },
-  ];
-
   const techServices = [
     {
       icon: <FaCode />,
-      title: "Web Development",
-      description:
-        "Custom web applications, progressive web apps, and enterprise portals using the latest technologies and frameworks.",
-      features: [
-        "React/Angular/Vue.js",
-        "Node.js/Python/PHP",
-        "REST/GraphQL APIs",
-        "Database Design",
-      ],
+      title: t("techServicesPage.services.webDev.title"),
+      description: t("techServicesPage.services.webDev.description"),
+      features: t("techServicesPage.services.webDev.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaMobileAlt />,
-      title: "Mobile Development",
-      description:
-        "Native and cross-platform mobile applications for iOS and Android with seamless user experience.",
-      features: [
-        "iOS (Swift/SwiftUI)",
-        "Android (Kotlin)",
-        "React Native",
-        "Flutter",
-      ],
+      title: t("techServicesPage.services.mobileDev.title"),
+      description: t("techServicesPage.services.mobileDev.description"),
+      features: t("techServicesPage.services.mobileDev.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaCloud />,
-      title: "Cloud Solutions",
-      description:
-        "Cloud architecture, migration, and management services for scalable and reliable infrastructure.",
-      features: [
-        "AWS/Azure/GCP",
-        "Containerization",
-        "Microservices",
-        "DevOps",
-      ],
+      title: t("techServicesPage.services.cloudSolutions.title"),
+      description: t("techServicesPage.services.cloudSolutions.description"),
+      features: t("techServicesPage.services.cloudSolutions.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaDatabase />,
-      title: "Database Solutions",
-      description:
-        "Robust database architecture and management systems for optimal performance and scalability.",
-      features: [
-        "Database Design",
-        "Data Migration",
-        "Performance Optimization",
-        "Data Security",
-      ],
+      title: t("techServicesPage.services.database.title"),
+      description: t("techServicesPage.services.database.description"),
+      features: t("techServicesPage.services.database.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaRobot />,
-      title: "AI & Machine Learning",
-      description:
-        "Intelligent solutions powered by advanced AI technologies and machine learning algorithms.",
-      features: [
-        "Predictive Analytics",
-        "Natural Language Processing",
-        "Computer Vision",
-        "Machine Learning Models",
-      ],
+      title: t("techServicesPage.services.aiMl.title"),
+      description: t("techServicesPage.services.aiMl.description"),
+      features: t("techServicesPage.services.aiMl.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaShieldAlt />,
-      title: "Cybersecurity",
-      description:
-        "Comprehensive security solutions to protect your digital assets and ensure compliance.",
-      features: [
-        "Security Audits",
-        "Penetration Testing",
-        "Compliance Management",
-        "Incident Response",
-      ],
-    },
-  ];
-
-  const pricingPlans = [
-    {
-      name: "Startup",
-      price: "$5,999",
-      features: [
-        "Single Platform Development",
-        "Basic Features Integration",
-        "Standard UI/UX Design",
-        "3 Months Support",
-        "Basic Security Features",
-        "Performance Optimization",
-        "Documentation",
-      ],
-    },
-    {
-      name: "Business",
-      price: "$12,999",
-      features: [
-        "Multi-Platform Development",
-        "Advanced Features",
-        "Premium UI/UX Design",
-        "6 Months Support",
-        "Advanced Security",
-        "Performance Optimization",
-        "API Integration",
-        "Analytics Integration",
-        "Comprehensive Documentation",
-      ],
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      features: [
-        "Full-Scale Development",
-        "Custom Features",
-        "Enterprise UI/UX Design",
-        "12 Months Support",
-        "Enterprise Security",
-        "Advanced Optimization",
-        "Full API Integration",
-        "Advanced Analytics",
-        "Complete Documentation",
-        "Training & Workshops",
-      ],
+      title: t("techServicesPage.services.cybersecurity.title"),
+      description: t("techServicesPage.services.cybersecurity.description"),
+      features: t("techServicesPage.services.cybersecurity.features", {
+        returnObjects: true,
+      }),
     },
   ];
 
@@ -301,33 +193,34 @@ const TechServicesPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Technology Solutions
+                {t("techServicesPage.hero.tag")}
               </motion.span>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Digital Innovation for
-                <span className="highlight"> Modern Businesses</span>
+                {t("techServicesPage.hero.title")}
+                <span className="highlight">
+                  {" "}
+                  {t("techServicesPage.hero.titleHighlight")}
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Transforming businesses through cutting-edge technology
-                solutions, innovative development, and scalable digital
-                infrastructure.
+                {t("techServicesPage.hero.description")}
               </motion.p>
             </motion.div>
           </div>
         </section>
         <section className="main-services">
           <div className="section-container">
-            <h2>Our Technology Services</h2>
+            <h2>{t("techServicesPage.services.title")}</h2>
             <p className="section-description">
-              Comprehensive technology solutions tailored to your business needs
+              {t("techServicesPage.services.subtitle")}
             </p>
             <div className="services-grid">
               {techServices.map((service, index) => (
@@ -368,37 +261,46 @@ const TechServicesPage = () => {
         {/* Technologies Section */}
         <section className="technologies-section">
           <div className="section-container">
-            <h2>Technologies We Use</h2>
+            <h2>{t("techServicesPage.technologies.title")}</h2>
             <p className="section-description">
-              We leverage the latest technologies to deliver cutting-edge
-              solutions
+              {t("techServicesPage.technologies.subtitle")}
             </p>
             <div className="tech-grid">
               {[
                 {
                   icon: <FaCode />,
-                  name: "Frontend",
-                  items: ["React", "Angular", "Vue.js", "TypeScript"],
+                  name: t("techServicesPage.technologies.frontend.name"),
+                  items: t("techServicesPage.technologies.frontend.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaMobileAlt />,
-                  name: "Mobile Applications",
-                  items: ["React Native", "Flutter", "Swift", "Kotlin"],
+                  name: t("techServicesPage.technologies.mobile.name"),
+                  items: t("techServicesPage.technologies.mobile.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaCogs />,
-                  name: "Backend",
-                  items: ["Node.js", "Python", "Java", "C#"],
+                  name: t("techServicesPage.technologies.backend.name"),
+                  items: t("techServicesPage.technologies.backend.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaDatabase />,
-                  name: "Database",
-                  items: ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
+                  name: t("techServicesPage.technologies.database.name"),
+                  items: t("techServicesPage.technologies.database.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaCloud />,
-                  name: "Cloud & DevOps",
-                  items: ["AWS", "Azure", "Docker", "Kubernetes"],
+                  name: t("techServicesPage.technologies.cloudDevops.name"),
+                  items: t("techServicesPage.technologies.cloudDevops.items", {
+                    returnObjects: true,
+                  }),
                 },
               ].map((tech, index) => (
                 <motion.div
@@ -432,10 +334,9 @@ const TechServicesPage = () => {
         {/* Process Section */}
         <section className="process-section">
           <div className="section-container">
-            <h2>Our Development Process</h2>
+            <h2>{t("techServicesPage.process.title")}</h2>
             <p className="section-description">
-              A systematic approach to delivering exceptional technology
-              solutions
+              {t("techServicesPage.process.subtitle")}
             </p>
             <div className="timeline-container">
               <div className="timeline-line">
@@ -445,30 +346,36 @@ const TechServicesPage = () => {
                 {[
                   {
                     icon: <FaChartLine />,
-                    title: "Discovery & Planning",
-                    description:
-                      "Understanding your requirements and creating a comprehensive development roadmap",
+                    title: t("techServicesPage.process.steps.discovery.title"),
+                    description: t(
+                      "techServicesPage.process.steps.discovery.description"
+                    ),
                     step: "01",
                   },
                   {
                     icon: <FaPaintBrush />,
-                    title: "Design & Architecture",
-                    description:
-                      "Creating intuitive designs and robust system architecture for optimal performance",
+                    title: t("techServicesPage.process.steps.design.title"),
+                    description: t(
+                      "techServicesPage.process.steps.design.description"
+                    ),
                     step: "02",
                   },
                   {
                     icon: <FaLaptopCode />,
-                    title: "Development & Testing",
-                    description:
-                      "Building robust solutions with clean code and comprehensive testing protocols",
+                    title: t(
+                      "techServicesPage.process.steps.development.title"
+                    ),
+                    description: t(
+                      "techServicesPage.process.steps.development.description"
+                    ),
                     step: "03",
                   },
                   {
                     icon: <FaShieldAlt />,
-                    title: "Deployment & Support",
-                    description:
-                      "Seamless deployment and ongoing support to ensure optimal performance",
+                    title: t("techServicesPage.process.steps.deployment.title"),
+                    description: t(
+                      "techServicesPage.process.steps.deployment.description"
+                    ),
                     step: "04",
                   },
                 ].map((step, index) => (
@@ -504,11 +411,8 @@ const TechServicesPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>Ready to Transform Your Business?</h2>
-              <p>
-                Let's discuss how we can help bring your technology vision to
-                life
-              </p>
+              <h2>{t("techServicesPage.cta.title")}</h2>
+              <p>{t("techServicesPage.cta.subtitle")}</p>
               <motion.button
                 className="cta-button"
                 onClick={() => navigate("/contact")}
@@ -518,7 +422,7 @@ const TechServicesPage = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Your Project
+                {t("techServicesPage.cta.button")}
               </motion.button>
             </motion.div>
           </div>

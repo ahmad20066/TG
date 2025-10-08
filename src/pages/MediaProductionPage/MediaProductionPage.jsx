@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaVideo,
   FaCamera,
@@ -20,6 +21,7 @@ import "./MediaProductionPage.css";
 const MediaProductionPage = () => {
   const [expandedCard, setExpandedCard] = useState(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const canvasRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -119,131 +121,56 @@ const MediaProductionPage = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const handlePricingSlide = (direction) => {
-    if (!isMobile) return;
-
-    const newSlide =
-      direction === "next"
-        ? Math.min(currentPricingSlide + 1, pricingPlans.length - 1)
-        : Math.max(currentPricingSlide - 1, 0);
-
-    setCurrentPricingSlide(newSlide);
-
-    const gridElement = pricingGridRef.current;
-    if (gridElement) {
-      const cardWidth = gridElement.offsetWidth;
-      gridElement.scrollTo({
-        left: newSlide * cardWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const portfolioItems = [
-    {
-      title: "Luxury Real Estate Showcase",
-      category: "Real Estate",
-      image: "/portfolio/real-estate-1.jpg",
-    },
-    {
-      title: "Fashion Collection Launch",
-      category: "Fashion",
-      image: "/portfolio/fashion-1.jpg",
-    },
-    {
-      title: "Hotel Virtual Tour",
-      category: "Hospitality",
-      image: "/portfolio/hospitality-1.jpg",
-    },
-    {
-      title: "Medical Device Presentation",
-      category: "Medical",
-      image: "/portfolio/medical-1.jpg",
-    },
-    {
-      title: "Government Campaign",
-      category: "Government",
-      image: "/portfolio/government-1.jpg",
-    },
-    {
-      title: "Tech Product Launch",
-      category: "Tech",
-      image: "/portfolio/tech-1.jpg",
-    },
-  ];
-
   const mediaServices = [
     {
       icon: <FaVideo />,
-      title: "Video Production",
-      description:
-        "Full-service video production including pre-production planning, filming, and post-production for commercials, corporate videos, and digital platforms.",
-      features: [
-        "4K/8K Video Production",
-        "Pre-production Planning",
-        "Professional Filming",
-        "Post-production Editing",
-      ],
+      title: t("mediaProductionPage.services.videoProduction.title"),
+      description: t(
+        "mediaProductionPage.services.videoProduction.description"
+      ),
+      features: t("mediaProductionPage.services.videoProduction.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaCamera />,
-      title: "Photography",
-      description:
-        "Professional photography services for commercial, editorial, and corporate needs. From product shots to architectural photography.",
-      features: [
-        "Commercial Photography",
-        "Product Photography",
-        "Corporate Headshots",
-        "Event Photography",
-      ],
+      title: t("mediaProductionPage.services.photography.title"),
+      description: t("mediaProductionPage.services.photography.description"),
+      features: t("mediaProductionPage.services.photography.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaCube />,
-      title: "CGI & 3D",
-      description:
-        "State-of-the-art CGI and 3D visualization services. We bring your ideas to life with photorealistic renders and animations.",
-      features: [
-        "3D Modeling",
-        "CGI Integration",
-        "Product Visualization",
-        "Architectural Rendering",
-      ],
+      title: t("mediaProductionPage.services.cgiAnd3d.title"),
+      description: t("mediaProductionPage.services.cgiAnd3d.description"),
+      features: t("mediaProductionPage.services.cgiAnd3d.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaEdit />,
-      title: "Post-Production",
-      description:
-        "Professional post-production services including editing, color grading, sound design, and visual effects.",
-      features: [
-        "Video Editing",
-        "Color Grading",
-        "Sound Design",
-        "Visual Effects",
-      ],
+      title: t("mediaProductionPage.services.postProduction.title"),
+      description: t("mediaProductionPage.services.postProduction.description"),
+      features: t("mediaProductionPage.services.postProduction.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaPalette />,
-      title: "Motion Graphics",
-      description:
-        "Creative motion graphics and animation services for branding, explainer videos, and digital content.",
-      features: [
-        "2D Animation",
-        "Motion Graphics",
-        "Logo Animation",
-        "Explainer Videos",
-      ],
+      title: t("mediaProductionPage.services.motionGraphics.title"),
+      description: t("mediaProductionPage.services.motionGraphics.description"),
+      features: t("mediaProductionPage.services.motionGraphics.features", {
+        returnObjects: true,
+      }),
     },
     {
       icon: <FaFilm />,
-      title: "Documentary Production",
-      description:
-        "Complete documentary production services from concept development to final delivery.",
-      features: [
-        "Story Development",
-        "Interview Setup",
-        "Location Filming",
-        "Documentary Editing",
-      ],
+      title: t("mediaProductionPage.services.documentary.title"),
+      description: t("mediaProductionPage.services.documentary.description"),
+      features: t("mediaProductionPage.services.documentary.features", {
+        returnObjects: true,
+      }),
     },
   ];
 
@@ -268,24 +195,25 @@ const MediaProductionPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Media Production
+                {t("mediaProductionPage.hero.tag")}
               </motion.span>
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Bringing Your Vision to
-                <span className="highlight"> Life</span>
+                {t("mediaProductionPage.hero.title")}
+                <span className="highlight">
+                  {" "}
+                  {t("mediaProductionPage.hero.titleHighlight")}
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                From videos to photography, we craft high-quality content that
-                captures attention and drives impact through creative
-                excellence.
+                {t("mediaProductionPage.hero.description")}
               </motion.p>
               {/* <motion.div
                 className="hero-stats"
@@ -319,10 +247,9 @@ const MediaProductionPage = () => {
         {/* Main Media Services Section */}
         <section className="main-services">
           <div className="section-container">
-            <h2>Our Media Production Services</h2>
+            <h2>{t("mediaProductionPage.services.title")}</h2>
             <p className="section-description">
-              Comprehensive media production solutions for all your creative
-              needs
+              {t("mediaProductionPage.services.subtitle")}
             </p>
             <div className="services-grid">
               {mediaServices.map((service, index) => (
@@ -364,47 +291,42 @@ const MediaProductionPage = () => {
         {/* Equipment & Technologies Section */}
         <section className="technologies-section">
           <div className="section-container">
-            <h2>Equipment & Technologies</h2>
+            <h2>{t("mediaProductionPage.equipment.title")}</h2>
             <p className="section-description">
-              We use industry-leading equipment and software for exceptional
-              results
+              {t("mediaProductionPage.equipment.subtitle")}
             </p>
             <div className="tech-grid">
               {[
                 {
                   icon: <FaVideo />,
-                  name: "Video Equipment",
-                  items: [
-                    "RED Cameras",
-                    "Sony FX Series",
-                    "DJI Drones",
-                    "Steadicam",
-                  ],
+                  name: t("mediaProductionPage.equipment.video.name"),
+                  items: t("mediaProductionPage.equipment.video.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaCamera />,
-                  name: "Photography",
-                  items: [
-                    "Canon R Series",
-                    "Nikon Z Series",
-                    "Profoto Lighting",
-                    "Phase One",
-                  ],
+                  name: t("mediaProductionPage.equipment.photography.name"),
+                  items: t("mediaProductionPage.equipment.photography.items", {
+                    returnObjects: true,
+                  }),
                 },
                 {
                   icon: <FaEdit />,
-                  name: "Post-Production",
-                  items: [
-                    "DaVinci Resolve",
-                    "Adobe Creative Suite",
-                    "Avid Media Composer",
-                    "Cinema 4D",
-                  ],
+                  name: t("mediaProductionPage.equipment.postProduction.name"),
+                  items: t(
+                    "mediaProductionPage.equipment.postProduction.items",
+                    {
+                      returnObjects: true,
+                    }
+                  ),
                 },
                 {
                   icon: <FaCube />,
-                  name: "3D & CGI",
-                  items: ["Blender", "Maya", "3ds Max", "Houdini"],
+                  name: t("mediaProductionPage.equipment.cgi3d.name"),
+                  items: t("mediaProductionPage.equipment.cgi3d.items", {
+                    returnObjects: true,
+                  }),
                 },
               ].map((tech, index) => (
                 <motion.div
@@ -439,9 +361,9 @@ const MediaProductionPage = () => {
         {/* Process Section */}
         <section className="process-section">
           <div className="section-container">
-            <h2>Our Production Process</h2>
+            <h2>{t("mediaProductionPage.process.title")}</h2>
             <p className="section-description">
-              A systematic approach to delivering exceptional media content
+              {t("mediaProductionPage.process.subtitle")}
             </p>
             <div className="timeline-container">
               <div className="timeline-line">
@@ -451,30 +373,40 @@ const MediaProductionPage = () => {
                 {[
                   {
                     icon: <FaChartLine />,
-                    title: "Concept & Planning",
-                    description:
-                      "Understanding your vision and creating detailed production plans and storyboards",
+                    title: t("mediaProductionPage.process.steps.concept.title"),
+                    description: t(
+                      "mediaProductionPage.process.steps.concept.description"
+                    ),
                     step: "01",
                   },
                   {
                     icon: <FaPaintBrush />,
-                    title: "Pre-Production",
-                    description:
-                      "Location scouting, casting, equipment preparation, and creative direction setup",
+                    title: t(
+                      "mediaProductionPage.process.steps.preProduction.title"
+                    ),
+                    description: t(
+                      "mediaProductionPage.process.steps.preProduction.description"
+                    ),
                     step: "02",
                   },
                   {
                     icon: <FaPlay />,
-                    title: "Production",
-                    description:
-                      "Professional filming and photography with state-of-the-art equipment",
+                    title: t(
+                      "mediaProductionPage.process.steps.production.title"
+                    ),
+                    description: t(
+                      "mediaProductionPage.process.steps.production.description"
+                    ),
                     step: "03",
                   },
                   {
                     icon: <FaShieldAlt />,
-                    title: "Post-Production",
-                    description:
-                      "Editing, color grading, sound design, and final delivery in your preferred format",
+                    title: t(
+                      "mediaProductionPage.process.steps.postProduction.title"
+                    ),
+                    description: t(
+                      "mediaProductionPage.process.steps.postProduction.description"
+                    ),
                     step: "04",
                   },
                 ].map((step, index) => (
@@ -511,11 +443,8 @@ const MediaProductionPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>Ready to Create Something Amazing?</h2>
-              <p>
-                Let's bring your creative vision to life with professional media
-                production
-              </p>
+              <h2>{t("mediaProductionPage.cta.title")}</h2>
+              <p>{t("mediaProductionPage.cta.subtitle")}</p>
               <motion.button
                 className="cta-button"
                 onClick={() => navigate("/contact")}
@@ -525,7 +454,7 @@ const MediaProductionPage = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Your Project
+                {t("mediaProductionPage.cta.button")}
               </motion.button>
             </motion.div>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import {
@@ -19,6 +20,7 @@ import "./ContactPage.css";
 
 const ContactPage = () => {
   const canvasRef = useRef(null);
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -152,13 +154,13 @@ const ContactPage = () => {
   const contactInfo = [
     {
       icon: <FaPhone />,
-      title: "Phone",
+      title: t("contact.info.phone"),
       value: "‎+966 50 397 4458",
       link: "tel:‎+966 50 397 4458",
     },
     {
       icon: <FaEnvelope />,
-      title: "Email",
+      title: t("contact.info.email"),
       value: "Info@tgmena.com",
       link: "mailto:Info@tgmena.com",
     },
@@ -180,8 +182,14 @@ const ContactPage = () => {
   ];
 
   const businessHours = [
-    { day: "Sunday - Thursday", hours: "9:00 AM - 6:00 PM" },
-    { day: "Friday - Saturday", hours: "Closed" },
+    {
+      day: t("contact.schedule.weekdays"),
+      hours: t("contact.schedule.weekdaysHours"),
+    },
+    {
+      day: t("contact.schedule.weekend"),
+      hours: t("contact.schedule.weekendHours"),
+    },
   ];
 
   return (
@@ -199,7 +207,7 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Get In Touch
+              {t("contact.hero.title")}
             </motion.h1>
             <motion.p
               className="contact-hero-subtitle"
@@ -207,7 +215,7 @@ const ContactPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Ready to bring your vision to life? Let's start the conversation.
+              {t("contact.hero.subtitle")}
             </motion.p>
             <motion.div
               className="response-time"
@@ -216,7 +224,7 @@ const ContactPage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <FaClock />
-              <span>We usually reply within 24 hours</span>
+              <span>{t("contact.hero.responseTime")}</span>
             </motion.div>
           </div>
         </section>
@@ -232,7 +240,7 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2>Contact Information</h2>
+              <h2>{t("contact.info.title")}</h2>
 
               {/* Contact Details */}
               <div className="contact-details">
@@ -264,7 +272,7 @@ const ContactPage = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <h3>Business Hours</h3>
+                <h3>{t("contact.info.businessHours")}</h3>
                 <div className="hours-list">
                   {businessHours.map((schedule, index) => (
                     <div key={index} className="hours-item">
@@ -283,7 +291,7 @@ const ContactPage = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h3>Follow Us</h3>
+                <h3>{t("contact.info.followUs")}</h3>
                 <div className="social-links">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -312,7 +320,7 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2>Send us a Message</h2>
+              <h2>{t("contact.form.title")}</h2>
               <form className="contact-form" onSubmit={handleSubmit}>
                 {/* Honeypot field for spam protection */}
                 <input
@@ -327,7 +335,7 @@ const ContactPage = () => {
                   <div className="form-group">
                     <label htmlFor="name">
                       <FaUser />
-                      Full Name *
+                      {t("contact.form.fullName")} *
                     </label>
                     <input
                       type="text"
@@ -336,13 +344,13 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      placeholder="Your full name"
+                      placeholder={t("contact.form.placeholders.fullName")}
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="email">
                       <FaEnvelope />
-                      Email Address *
+                      {t("contact.form.email")} *
                     </label>
                     <input
                       type="email"
@@ -351,7 +359,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      placeholder="your.email@example.com"
+                      placeholder={t("contact.form.placeholders.email")}
                     />
                   </div>
                 </div>
@@ -360,7 +368,7 @@ const ContactPage = () => {
                   <div className="form-group">
                     <label htmlFor="company">
                       <FaBuilding />
-                      Company
+                      {t("contact.form.company")}
                     </label>
                     <input
                       type="text"
@@ -368,13 +376,13 @@ const ContactPage = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      placeholder="Your company name"
+                      placeholder={t("contact.form.placeholders.company")}
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="subject">
                       <FaPaperPlane />
-                      Subject *
+                      {t("contact.form.subject")} *
                     </label>
                     <input
                       type="text"
@@ -383,7 +391,7 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      placeholder="What's this about?"
+                      placeholder={t("contact.form.placeholders.subject")}
                     />
                   </div>
                 </div>
@@ -391,7 +399,7 @@ const ContactPage = () => {
                 <div className="form-group">
                   <label htmlFor="message">
                     <FaPaperPlane />
-                    Message *
+                    {t("contact.form.message")} *
                   </label>
                   <textarea
                     id="message"
@@ -400,7 +408,7 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     required
                     rows="6"
-                    placeholder="Tell us about your project or inquiry..."
+                    placeholder={t("contact.form.placeholders.message")}
                   ></textarea>
                 </div>
 
@@ -414,12 +422,12 @@ const ContactPage = () => {
                   {isSubmitting ? (
                     <>
                       <div className="spinner"></div>
-                      Sending...
+                      {t("contact.form.sending")}
                     </>
                   ) : (
                     <>
                       <FaPaperPlane />
-                      Send Message
+                      {t("contact.form.send")}
                     </>
                   )}
                 </motion.button>
@@ -430,8 +438,7 @@ const ContactPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    Thank you! Your message has been sent successfully. We'll
-                    get back to you within 24 hours.
+                    {t("contact.form.success")}
                   </motion.div>
                 )}
 
@@ -441,8 +448,7 @@ const ContactPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    Sorry, there was an error sending your message. Please try
-                    again or contact us directly.
+                    {t("contact.form.error")}
                   </motion.div>
                 )}
               </form>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Header from "../../components/Header/Header";
 import {
   FaRocket,
@@ -17,6 +18,7 @@ import Footer from "../../components/Footer/Footer";
 const AboutPage = () => {
   const canvasRef = useRef(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Particle animation code...
   useEffect(() => {
@@ -138,25 +140,21 @@ const AboutPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                Transforming Ideas Into Digital Reality
+                {t("about.hero.title")}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                We are a leading digital transformation company in the MENA
-                region, specializing in innovative solutions that drive business
-                growth and technological advancement.
+                {t("about.hero.paragraph1")}
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                Our passion for excellence and commitment to innovation has made
-                us a trusted partner for organizations seeking to thrive in the
-                digital age.
+                {t("about.hero.paragraph2")}
               </motion.p>
             </motion.div>
           </div>
@@ -171,9 +169,9 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>Vision & Mission</h2>
+            <h2>{t("about.visionMission.title")}</h2>
             <p className="section-description">
-              Driving innovation and excellence in digital transformation
+              {t("about.visionMission.subtitle")}
             </p>
             <div className="vision-mission-grid">
               <motion.div
@@ -186,12 +184,8 @@ const AboutPage = () => {
                 <div className="box-icon">
                   <FaRocket />
                 </div>
-                <h3>Our Vision</h3>
-                <p>
-                  To be the leading force in digital transformation, creating
-                  innovative solutions that shape the future of technology in
-                  the MENA region and beyond.
-                </p>
+                <h3>{t("about.visionMission.vision.title")}</h3>
+                <p>{t("about.visionMission.vision.description")}</p>
               </motion.div>
 
               <motion.div
@@ -204,12 +198,8 @@ const AboutPage = () => {
                 <div className="box-icon">
                   <FaLightbulb />
                 </div>
-                <h3>Our Mission</h3>
-                <p>
-                  To empower businesses through cutting-edge digital solutions,
-                  fostering growth and innovation while delivering exceptional
-                  value to our clients and partners.
-                </p>
+                <h3>{t("about.visionMission.mission.title")}</h3>
+                <p>{t("about.visionMission.mission.description")}</p>
               </motion.div>
             </div>
           </motion.div>
@@ -299,35 +289,31 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>Our Services</h2>
+            <h2>{t("about.services.title")}</h2>
             <p className="section-description">
-              Comprehensive digital solutions tailored to your needs
+              {t("about.services.subtitle")}
             </p>
             <div className="services-grid">
               {[
                 {
                   icon: "📣",
-                  title: "Marketing & Communication",
-                  description:
-                    "Helping brands tell their story, reach the right audience, and build strong connections through smart strategies.",
+                  title: t("services.marketing.title"),
+                  description: t("services.marketing.description"),
                 },
                 {
                   icon: "🎨",
-                  title: "Creative designs",
-                  description:
-                    "Bringing ideas to life with visuals that inspire, engage, and leave a lasting impression.",
+                  title: t("services.creative.title"),
+                  description: t("services.creative.description"),
                 },
                 {
                   icon: "🎥",
-                  title: "Media Production",
-                  description:
-                    "From videos to photography, we craft high-quality content that captures attention and drives impact.",
+                  title: t("services.production.title"),
+                  description: t("services.production.description"),
                 },
                 {
                   icon: "⚡",
-                  title: "Tech",
-                  description:
-                    "Delivering innovative digital solutions that make your business smarter, faster, and more connected.",
+                  title: t("services.tech.title"),
+                  description: t("services.tech.description"),
                 },
               ].map((service, index) => (
                 <motion.div
@@ -356,10 +342,8 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>Our Team</h2>
-            <p className="section-description">
-              Meet the experts behind our success
-            </p>
+            <h2>{t("about.team.title")}</h2>
+            <p className="section-description">{t("about.team.subtitle")}</p>
             <div className="team-grid">
               {[
                 {
@@ -373,7 +357,7 @@ const AboutPage = () => {
                   // description: "Expert in emerging technologies",
                 },
                 {
-                  name: "Tareq Bamarouf",
+                  name: "Tarik Bamarouf",
                   // role: "Creative Director",
                   // description: "Award-winning design professional",
                 },
@@ -407,9 +391,9 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>Get in Touch</h2>
+            <h2>{t("about.contactSection.title")}</h2>
             <p className="section-description">
-              Ready to start your digital transformation journey?
+              {t("about.contactSection.subtitle")}
             </p>
             <motion.button
               className="cta-button"
@@ -420,7 +404,7 @@ const AboutPage = () => {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Contact Us
+              {t("about.contactSection.button")}
             </motion.button>
           </motion.div>
         </section>

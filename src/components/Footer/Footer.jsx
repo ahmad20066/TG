@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaFacebookF,
   FaTwitter,
@@ -15,6 +16,7 @@ import "./Footer.css";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -29,8 +31,7 @@ const Footer = () => {
           <div className="footer-section">
             <h3>TG MENA</h3>
             <p className="company-description">
-              Transforming ideas into digital reality. Your partner in creative
-              excellence and technological innovation.
+              {t("footer.companyDescription")}
             </p>
             <div
               className="social-links"
@@ -55,14 +56,14 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="footer-section">
-            <h4>Quick Links</h4>
+            <h4>{t("footer.quickLinks")}</h4>
             <ul className="footer-links">
               <li>
                 <button
                   onClick={() => handleNavigation("/services")}
                   className="footer-nav-button"
                 >
-                  Services
+                  {t("nav.services")}
                 </button>
               </li>
               <li>
@@ -70,7 +71,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/work")}
                   className="footer-nav-button"
                 >
-                  Projects
+                  {t("footer.projects")}
                 </button>
               </li>
               <li>
@@ -78,7 +79,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/about")}
                   className="footer-nav-button"
                 >
-                  About Us
+                  {t("footer.aboutUs")}
                 </button>
               </li>
               <li>
@@ -86,7 +87,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/contact")}
                   className="footer-nav-button"
                 >
-                  Contact
+                  {t("nav.contact")}
                 </button>
               </li>
               <li>
@@ -94,7 +95,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/")}
                   className="footer-nav-button"
                 >
-                  Home
+                  {t("footer.home")}
                 </button>
               </li>
             </ul>
@@ -102,14 +103,14 @@ const Footer = () => {
 
           {/* Services */}
           <div className="footer-section">
-            <h4>Services</h4>
+            <h4>{t("footer.services")}</h4>
             <ul className="footer-links">
               <li>
                 <button
                   onClick={() => handleNavigation("/services/media-production")}
                   className="footer-nav-button"
                 >
-                  Media Production
+                  {t("footer.mediaProduction")}
                 </button>
               </li>
               <li>
@@ -117,7 +118,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/services/marketing")}
                   className="footer-nav-button"
                 >
-                  Marketing & Communication
+                  {t("footer.marketing")}
                 </button>
               </li>
               <li>
@@ -125,7 +126,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/services/tech")}
                   className="footer-nav-button"
                 >
-                  Tech Solutions
+                  {t("footer.tech")}
                 </button>
               </li>
               <li>
@@ -133,7 +134,7 @@ const Footer = () => {
                   onClick={() => handleNavigation("/services")}
                   className="footer-nav-button"
                 >
-                  All Services
+                  {t("footer.allServices")}
                 </button>
               </li>
             </ul>
@@ -141,7 +142,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="footer-section">
-            <h4>Contact Us</h4>
+            <h4>{t("footer.contactUs")}</h4>
             <ul className="footer-links">
               <li>
                 <a href="tel:‎+966 50 397 4458">
@@ -161,12 +162,12 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div className="newsletter-section">
-          <h4>Subscribe to Our Newsletter</h4>
-          <p>Stay updated with our latest news and updates</p>
+          <h4>{t("footer.newsletter.title")}</h4>
+          <p>{t("footer.newsletter.subtitle")}</p>
           <form className="newsletter-form">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t("footer.newsletter.placeholder")}
               className="newsletter-input"
             />
             <motion.button
@@ -175,7 +176,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Subscribe
+              {t("footer.newsletter.button")}
             </motion.button>
           </form>
         </div>
@@ -183,12 +184,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="footer-bottom">
           <div className="copyright">
-            © {currentYear} TG MENA. All rights reserved.
+            © {currentYear} {t("footer.copyright")}
           </div>
           <div className="footer-bottom-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Service</a>
-            <a href="#cookies">Cookie Policy</a>
+            <a href="#privacy">{t("footer.privacyPolicy")}</a>
+            <a href="#terms">{t("footer.termsOfService")}</a>
+            <a href="#cookies">{t("footer.cookiePolicy")}</a>
           </div>
         </div>
       </div>
