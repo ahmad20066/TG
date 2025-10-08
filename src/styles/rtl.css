@@ -316,10 +316,65 @@ RTL Support Styles
     text-align: start;
 }
 
-/* Service/Value Descriptions RTL - aligned to end */
-[dir="rtl"] .service-description,
+/* Flip Hero Background Logo RTL */
+[dir="rtl"] .hero-normal::before {
+    background-position: right center;
+    left: 0;
+    right: 220px;
+}
+
+[dir="rtl"] .hero-left {
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+/* Services Component Cards RTL - aligned to start */
+[dir="rtl"] .service-description {
+    text-align: start;
+}
+
+[dir="rtl"] .service-features {
+    text-align: start;
+}
+
+[dir="rtl"] .feature-item {
+    text-align: start;
+}
+
+/* Value Descriptions RTL - aligned to end */
 [dir="rtl"] .value-subtitle {
     text-align: end;
+}
+
+/* Why Choose Us Component Cards RTL - aligned to start */
+[dir="rtl"] .feature-title {
+    text-align: start;
+}
+
+[dir="rtl"] .feature-description {
+    text-align: start;
+}
+
+[dir="rtl"] .process-title {
+    text-align: start;
+}
+
+[dir="rtl"] .process-description {
+    text-align: start;
+}
+
+/* Client Logos Component RTL */
+[dir="rtl"] .client-logos .section-header h2 {
+    text-align: center !important;
+}
+
+[dir="rtl"] .client-logos .section-header p {
+    text-align: start !important;
+}
+
+/* Featured Projects Component RTL */
+[dir="rtl"] .featured-projects .section-header p {
+    text-align: center !important;
 }
 
 /* Preserve LTR for specific elements */

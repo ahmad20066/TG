@@ -103,6 +103,16 @@ const HomePage = () => {
   const baseText = t("hero.title") + " ";
   const words = [t("hero.word1"), t("hero.word2")];
 
+  // Reset animation when language changes
+  useEffect(() => {
+    setText("");
+    setIsDeleting(false);
+    setIsFullTextTyped(false);
+    setIsComplete(false);
+    setCursorVisible(true);
+    setTypingSpeed(50);
+  }, [baseText, words[0], words[1]]);
+
   // Cursor blinking effect
   useEffect(() => {
     if (isComplete) {
