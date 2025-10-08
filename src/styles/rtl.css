@@ -377,6 +377,10 @@ RTL Support Styles
     text-align: center !important;
 }
 
+[dir="rtl"] .featured-projects .cta-container p {
+    text-align: center !important;
+}
+
 /* Preserve LTR for specific elements */
 [dir="rtl"] .logo-symbol,
 [dir="rtl"] .particle-canvas,
