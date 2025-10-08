@@ -98,7 +98,7 @@ body {
     left: 220px;
     right: 0;
     bottom: 0;
-    background: url('/src/assets/HERO.png');
+    background: url('../../assets/HERO.png');
     background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;

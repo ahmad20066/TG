@@ -381,6 +381,18 @@ RTL Support Styles
     text-align: center !important;
 }
 
+[dir="rtl"] .project-title {
+    text-align: start;
+}
+
+[dir="rtl"] .project-category {
+    text-align: start;
+}
+
+[dir="rtl"] .project-description {
+    text-align: start;
+}
+
 /* Preserve LTR for specific elements */
 [dir="rtl"] .logo-symbol,
 [dir="rtl"] .particle-canvas,

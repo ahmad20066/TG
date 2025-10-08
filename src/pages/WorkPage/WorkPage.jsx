@@ -14,6 +14,20 @@ import {
 import "./WorkPage.css";
 import Footer from "../../components/Footer/Footer";
 
+// Import brand images
+import faneImage from "../../assets/brands/fane.png";
+import huqqabazImage from "../../assets/brands/huqqabaz.png";
+import dpcImage from "../../assets/brands/dpc.jpg";
+import tartaImage from "../../assets/brands/tarta.png";
+import unframedImage from "../../assets/brands/unframed.png";
+import hmImage from "../../assets/brands/H&M.png";
+import shiftImage from "../../assets/brands/shift.png";
+import saccessImage from "../../assets/brands/saccess.png";
+import pebbleImage from "../../assets/brands/Pebble.png";
+import tahkeemImage from "../../assets/brands/Tahkeem.png";
+import eventekImage from "../../assets/brands/Eventek.jpeg";
+import evolveImage from "../../assets/brands/evolve.png";
+
 const WorkPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const canvasRef = useRef(null);
@@ -103,7 +117,7 @@ const WorkPage = () => {
     {
       title: "Fane",
       category: "social media",
-      image: "/assets/brands/fane.png",
+      image: faneImage,
       icon: <FaShoppingCart />,
       description: t("workPage.projects.fane.description"),
       technologies: t("workPage.projects.fane.tech", { returnObjects: true }),
@@ -112,7 +126,7 @@ const WorkPage = () => {
     {
       title: "Huqqabaz",
       category: "social media",
-      image: "/assets/brands/huqqabaz.png",
+      image: huqqabazImage,
       icon: <FaMobileAlt />,
       description: t("workPage.projects.huqqabaz.description"),
       technologies: t("workPage.projects.huqqabaz.tech", {
@@ -123,7 +137,7 @@ const WorkPage = () => {
     {
       title: "Diamond Padel club",
       category: "social media",
-      image: "/assets/brands/dpc.jpg",
+      image: dpcImage,
       icon: <FaRobot />,
       description: t("workPage.projects.dpc.description"),
       technologies: t("workPage.projects.dpc.tech", { returnObjects: true }),
@@ -132,7 +146,7 @@ const WorkPage = () => {
     {
       title: "Tarta de Amor",
       category: "design",
-      image: "/assets/brands/tarta.png",
+      image: tartaImage,
       icon: <FaGlobe />,
       description: t("workPage.projects.tarta.description"),
       technologies: t("workPage.projects.tarta.tech", { returnObjects: true }),
@@ -141,7 +155,7 @@ const WorkPage = () => {
     {
       title: "Unframed breaks the mold",
       category: "design",
-      image: "/assets/brands/unframed.png",
+      image: unframedImage,
       icon: <FaChartLine />,
       description: t("workPage.projects.unframed.description"),
       technologies: t("workPage.projects.unframed.tech", {
@@ -152,7 +166,7 @@ const WorkPage = () => {
     {
       title: "H & M",
       category: "media production",
-      image: "/assets/brands/H&M.png",
+      image: hmImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.hm.description"),
       technologies: t("workPage.projects.hm.tech", { returnObjects: true }),
@@ -161,7 +175,7 @@ const WorkPage = () => {
     {
       title: "Shift inc.",
       category: "media production",
-      image: "/assets/brands/shift.png",
+      image: shiftImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.shift.description"),
       technologies: t("workPage.projects.shift.tech", { returnObjects: true }),
@@ -170,7 +184,7 @@ const WorkPage = () => {
     {
       title: "Saccess Perfume",
       category: "shopify",
-      image: "/assets/brands/saccess.png",
+      image: saccessImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.saccess.description"),
       technologies: t("workPage.projects.saccess.tech", {
@@ -181,7 +195,7 @@ const WorkPage = () => {
     {
       title: "Pebble",
       category: "web",
-      image: "/assets/brands/Pebble.png",
+      image: pebbleImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.pebble.description"),
       technologies: t("workPage.projects.pebble.tech", { returnObjects: true }),
@@ -190,7 +204,7 @@ const WorkPage = () => {
     {
       title: "منصة تحكيم",
       category: "web",
-      image: "/assets/brands/Tahkeem.png",
+      image: tahkeemImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.tahkeem.description"),
       technologies: t("workPage.projects.tahkeem.tech", {
@@ -201,7 +215,7 @@ const WorkPage = () => {
     {
       title: "EvenTek",
       category: "mobile",
-      image: "/assets/brands/Eventek.jpeg",
+      image: eventekImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.eventek.description"),
       technologies: t("workPage.projects.eventek.tech", {
@@ -212,7 +226,7 @@ const WorkPage = () => {
     {
       title: "Evolve",
       category: "mobile",
-      image: "/assets/brands/evolve.png",
+      image: evolveImage,
       icon: <FaPaintBrush />,
       description: t("workPage.projects.evolve.description"),
       technologies: t("workPage.projects.evolve.tech", {

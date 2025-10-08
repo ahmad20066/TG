@@ -4,6 +4,13 @@ import { useTranslation } from "react-i18next";
 import "./FeaturedProjects.css";
 import { useNavigate } from "react-router-dom";
 
+// Import brand images
+import faneImage from "../../assets/brands/fane.png";
+import unframedImage from "../../assets/brands/unframed.png";
+import pebbleImage from "../../assets/brands/pebble.png";
+import hmImage from "../../assets/brands/h&m.png";
+import evolveImage from "../../assets/brands/evolve.png";
+
 const FeaturedProjects = () => {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,35 +25,35 @@ const FeaturedProjects = () => {
       title: t("featuredProjects.projects.fane.title"),
       category: t("featuredProjects.projects.fane.category"),
       description: t("featuredProjects.projects.fane.description"),
-      image: "/assets/brands/fane.png",
+      image: faneImage,
     },
     {
       id: "unframed",
       title: t("featuredProjects.projects.unframed.title"),
       category: t("featuredProjects.projects.unframed.category"),
       description: t("featuredProjects.projects.unframed.description"),
-      image: "/assets/brands/unframed.png",
+      image: unframedImage,
     },
     {
       id: "pebble",
       title: t("featuredProjects.projects.pebble.title"),
       category: t("featuredProjects.projects.pebble.category"),
       description: t("featuredProjects.projects.pebble.description"),
-      image: "/assets/brands/pebble.png",
+      image: pebbleImage,
     },
     {
       id: "h&m",
       title: t("featuredProjects.projects.hm.title"),
       category: t("featuredProjects.projects.hm.category"),
       description: t("featuredProjects.projects.hm.description"),
-      image: "/assets/brands/h&m.png",
+      image: hmImage,
     },
     {
       id: "Evolve",
       title: t("featuredProjects.projects.evolve.title"),
       category: t("featuredProjects.projects.evolve.category"),
       description: t("featuredProjects.projects.evolve.description"),
-      image: "/assets/brands/evolve.png",
+      image: evolveImage,
     },
   ];
 
