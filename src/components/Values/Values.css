@@ -38,7 +38,7 @@
 .values-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--pure-white);
+    color: var(--crimson-red);
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -96,33 +96,27 @@
 }
 
 .value-icon {
-    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, var(--crimson-red), #ff4757);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.5rem;
-    display: inline-block;
-    position: relative;
-    will-change: transform;
-}
-
-.value-icon::after {
-    content: '';
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: var(--crimson-red);
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.1;
-    filter: blur(8px);
-    transform: scale(1.2);
     transition: all 0.3s ease;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
+    position: relative;
 }
 
-.value-card:hover .value-icon::after {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0.15;
+.value-card:hover .value-icon {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+}
+
+.value-icon svg {
+    width: 35px;
+    height: 35px;
+    color: var(--pure-white);
 }
 
 .value-title {
@@ -196,8 +190,14 @@
     }
 
     .value-icon {
-        font-size: 2rem;
+        width: 60px;
+        height: 60px;
         margin-bottom: 1rem;
+    }
+
+    .value-icon svg {
+        width: 30px;
+        height: 30px;
     }
 
     .value-title {
@@ -230,8 +230,14 @@
     }
 
     .value-icon {
-        font-size: 1.75rem;
+        width: 50px;
+        height: 50px;
         margin-bottom: 0.75rem;
+    }
+
+    .value-icon svg {
+        width: 25px;
+        height: 25px;
     }
 
     .value-title {

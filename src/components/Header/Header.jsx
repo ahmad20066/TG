@@ -195,10 +195,10 @@ const Header = () => {
             <motion.li
               key={item.name}
               className="mobile-nav-item"
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{
                 opacity: isMobileMenuOpen ? 1 : 0,
-                x: isMobileMenuOpen ? 0 : -20,
+                y: isMobileMenuOpen ? 0 : -10,
               }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
@@ -209,7 +209,6 @@ const Header = () => {
                 onClick={() => handleNavClick(item)}
                 whileHover={{
                   color: "#E50914",
-                  x: 10,
                 }}
                 transition={{ duration: 0.3 }}
                 style={{ cursor: "pointer" }}
@@ -221,17 +220,17 @@ const Header = () => {
           {/* Language Toggle in Mobile Menu */}
           <motion.li
             className="mobile-nav-item mobile-language-item"
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{
               opacity: isMobileMenuOpen ? 1 : 0,
-              x: isMobileMenuOpen ? 0 : -20,
+              y: isMobileMenuOpen ? 0 : -10,
             }}
             transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
           >
             <motion.button
               className="mobile-language-toggle"
               onClick={toggleLanguage}
-              whileHover={{ color: "#E50914", x: 10 }}
+              whileHover={{ color: "#E50914" }}
               whileTap={{ scale: 0.95 }}
             >
               {language === "en" ? "العربية" : "English"}

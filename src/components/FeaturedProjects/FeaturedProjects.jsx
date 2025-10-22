@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "./FeaturedProjects.css";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const FeaturedProjects = () => {
   const { t } = useTranslation();
+  const { language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const projectsGridRef = useRef(null);
@@ -114,7 +116,9 @@ const FeaturedProjects = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>{t("featuredProjects.title")}</h2>
+          <div className="featured-projects-title">
+            {t("featuredProjects.title")}
+          </div>
           <p>{t("featuredProjects.subtitle")}</p>
         </motion.div>
 
@@ -146,7 +150,9 @@ const FeaturedProjects = () => {
                   : {}
               }
               onClick={() => navigate("/work")}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+              }}
             >
               <div className="project-image">
                 <div className="image-placeholder">
@@ -155,7 +161,12 @@ const FeaturedProjects = () => {
               </div>
               <div className="project-info">
                 <span className="project-category">{project.category}</span>
-                <h3 className="project-title">{project.title}</h3>
+                <h3
+                  className="project-title"
+                  style={{ textAlign: language === "ar" ? "start" : undefined }}
+                >
+                  {project.title}
+                </h3>
                 <p className="project-description">{project.description}</p>
               </div>
             </motion.div>

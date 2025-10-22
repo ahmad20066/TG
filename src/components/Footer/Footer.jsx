@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
-  FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
   FaPhoneAlt,
@@ -12,11 +10,14 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import "./Footer.css";
+import { dir } from "i18next";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { language } = useLanguage();
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -35,7 +36,7 @@ const Footer = () => {
             </p>
             <div
               className="social-links"
-              style={{ display: "flex", gap: "1rem" }}
+              style={{ display: "flex", gap: "1rem", justifyContent: "start" }}
             >
               <a
                 href="https://www.instagram.com/tg.mena?igsh=dXEyYXZmdHg3Yjk4"
@@ -143,7 +144,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="footer-section">
             <h4>{t("footer.contactUs")}</h4>
-            <ul className="footer-links">
+            <ul className="footer-links" style={{ direction: "ltr" }}>
               <li>
                 <a href="tel:‎+966 50 397 4458">
                   <FaPhoneAlt className="footer-link-icon" />

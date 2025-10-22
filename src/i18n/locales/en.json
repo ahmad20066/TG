@@ -356,6 +356,26 @@
       "mediaProduction": "Media Production"
     },
     "projects": {
+      "Toys Lab":{
+        "description":"Toys Lab is a playful and creative concept brand that delivers imaginative experiences through toys and family entertainment. The brand connects with both kids and parents through colorful, fun, and engaging content.",
+        "tech":["Retail E-Commerce" , "Social Media Management" , "Content Creation"]
+      },
+      "Barnda":{
+        "description":"Barnda is an international high-end shisha lounge and restaurant that offers a premium dining and social experience. Known for its elegant ambiance and luxurious setting, Barnda combines exceptional cuisine with refined lounge culture.",
+        "tech":["Restaurant" , "F&B Media Production" , "Content Creation" , "Photography"]
+      },
+      "Saudi Wrestling Federation":{
+        "description":"The Saudi Wrestling Federation is the official governing body for wrestling in Saudi Arabia, dedicated to promoting and developing the sport across the Kingdom.",
+        "tech" :["Sports" , "Media Production" ,"Content Creation" , "Video Production","Campaigns" ]
+      },
+      "Hadiha":{
+        "description":" Hadiha is an e-commerce brand focused on stress balls and fidget toys — the name itself plays on the Arabic word “هادئة,” meaning calm. The brand aims to bring humor, playfulness, and relief to everyday stress through fun, interactive products.",
+        "tech":["E-Commerce" ,"Branding" ,"Social Media Management" , "Content Creation" , "Media Production" , "Paid Advertising"] 
+      },
+      "the feast": {
+        "description" :"The Feast is an American diner-style restaurant founded by Chef Abbas, inspired by his university days with friends. The menu celebrates comfort food favorites such as cheesesteaks and gourmet burgers, blending nostalgia with flavor.",
+        "tech": ["Restaurant", "Marketing","Social media", "Media Production" , "Launch Campaign"]
+      },
       "fane": {
         "description": "We handled full account management for FANE, shaping a digital presence that matched their bold, street-smart identity. From content planning to daily execution, every detail was aligned with their brand culture.",
         "tech": ["Lifestyle", "Social media", "Barbershop"]

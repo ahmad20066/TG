@@ -16,10 +16,10 @@
     margin-bottom: 4rem;
 }
 
-.section-header h2 {
+.featured-projects-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--pure-white);
+    color: red;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -74,7 +74,7 @@
 }
 
 .placeholder-text {
-    color: var(--pure-white);
+    color: var(--crimson-red);
     font-size: 1.2rem;
     font-weight: 600;
     text-align: center;
@@ -219,8 +219,9 @@
         margin-bottom: 2rem;
     }
 
-    .section-header h2 {
+    .featured-projects-title {
         font-size: 2rem;
+        color: red;
         margin-bottom: 0.75rem;
     }
 
@@ -401,8 +402,9 @@
         padding: 2.5rem 0;
     }
 
-    .section-header h2 {
+    .featured-projects-title {
         font-size: 1.75rem;
+        color: red;
     }
 
     .project-card {

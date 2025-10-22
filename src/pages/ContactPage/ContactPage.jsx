@@ -218,6 +218,11 @@ const ContactPage = () => {
               {t("contact.hero.subtitle")}
             </motion.p>
             <motion.div
+              style={{
+                margin: "0 auto",
+                display: "flex",
+                width: "fit-content",
+              }}
               className="response-time"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -240,13 +245,18 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2>{t("contact.info.title")}</h2>
+              <div className="contact-info-title">
+                {t("contact.info.title")}
+              </div>
 
               {/* Contact Details */}
               <div className="contact-details">
                 {contactInfo.map((info, index) => (
                   <motion.a
                     key={index}
+                    style={{
+                      direction: "ltr",
+                    }}
                     href={info.link}
                     className="contact-item"
                     initial={{ opacity: 0, y: 20 }}
@@ -272,7 +282,9 @@ const ContactPage = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <h3>{t("contact.info.businessHours")}</h3>
+                <h3 style={{ textAlign: "start" }}>
+                  {t("contact.info.businessHours")}
+                </h3>
                 <div className="hours-list">
                   {businessHours.map((schedule, index) => (
                     <div key={index} className="hours-item">
@@ -291,7 +303,9 @@ const ContactPage = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <h3>{t("contact.info.followUs")}</h3>
+                <h3 style={{ textAlign: "start" }}>
+                  {t("contact.info.followUs")}
+                </h3>
                 <div className="social-links">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -320,7 +334,9 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2>{t("contact.form.title")}</h2>
+              <div className="contact-form-title">
+                {t("contact.form.title")}
+              </div>
               <form className="contact-form" onSubmit={handleSubmit}>
                 {/* Honeypot field for spam protection */}
                 <input

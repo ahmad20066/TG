@@ -40,12 +40,14 @@
     justify-content: flex-start;
     align-items: center;
     position: relative;
+    
 }
 
 .logo-container {
     flex: 2;
     position: relative;
     display: flex;
+    align-content: center;
     justify-content: flex-start;
     align-items: center;
     overflow: visible;
@@ -77,7 +79,7 @@
     font-size: 1.6rem;
     margin-bottom: 1rem;
     line-height: 1.2;
-    background: linear-gradient(45deg, #fff, #E50914);
+    background: var(--crimson-red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -201,10 +203,50 @@ section h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #fff, #E50914);
+    background: var(--crimson-red);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.vision-mission-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.about-services-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.about-team-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.about-contact-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .section-description {
@@ -656,7 +698,6 @@ section h2 {
     font-size: 1.6rem !important;
     margin-bottom: 1rem;
     line-height: 1.2;
-    background: linear-gradient(45deg, #fff, #E50914);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -725,6 +766,22 @@ section h2 {
         font-size: 2.2rem;
     }
 
+    .vision-mission-title {
+        font-size: 2.2rem;
+    }
+
+    .about-services-title {
+        font-size: 2.2rem;
+    }
+
+    .about-team-title {
+        font-size: 2.2rem;
+    }
+
+    .about-contact-title {
+        font-size: 2.2rem;
+    }
+
     .process-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -766,6 +823,22 @@ section h2 {
         font-size: 2rem;
     }
 
+    .vision-mission-title {
+        font-size: 2rem;
+    }
+
+    .about-services-title {
+        font-size: 2rem;
+    }
+
+    .about-team-title {
+        font-size: 2rem;
+    }
+
+    .about-contact-title {
+        font-size: 2rem;
+    }
+
     .section-description {
         font-size: 1.1rem;
     }
@@ -790,6 +863,22 @@ section h2 {
 
 @media (max-width: 480px) {
     section h2 {
+        font-size: 1.8rem;
+    }
+
+    .vision-mission-title {
+        font-size: 1.8rem;
+    }
+
+    .about-services-title {
+        font-size: 1.8rem;
+    }
+
+    .about-team-title {
+        font-size: 1.8rem;
+    }
+
+    .about-contact-title {
         font-size: 1.8rem;
     }
 

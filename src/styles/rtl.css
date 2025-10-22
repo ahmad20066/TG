@@ -23,14 +23,11 @@ RTL Support Styles
 
 /* Header RTL */
 [dir="rtl"] .header {
-    left: 6rem;
-    right: 5.5rem;
+    left: 5.5rem;
+    right: 6rem;
 }
 
-[dir="rtl"] .header-container {
-    flex-direction: row-reverse;
-}
-
+/* Keep nav items in RTL order but don't flip the entire header layout */
 [dir="rtl"] .nav-list {
     flex-direction: row-reverse;
 }
@@ -42,11 +39,19 @@ RTL Support Styles
     border-right: 3px solid transparent;
 }
 
+[dir="rtl"] .mobile-nav-link.active {
+    border-left: none;
+    border-right: 3px solid var(--crimson-red);
+}
+
 [dir="rtl"] .mobile-nav-link:hover,
 [dir="rtl"] .mobile-language-toggle:hover {
     border-left-color: transparent;
     border-right-color: var(--crimson-red);
-    transform: translateX(-10px);
+}
+
+[dir="rtl"] .mobile-language-toggle {
+    text-align: right;
 }
 
 /* Flexbox RTL Reversals */
@@ -386,5 +391,116 @@ RTL Support Styles
 [dir="rtl"] .particle-canvas,
 [dir="rtl"] img {
     direction: ltr;
+}
+
+/* Services Page - List Items RTL */
+[dir="rtl"] .service-features li {
+    padding-left: 0;
+    padding-right: 1.5rem;
+    text-align: start;
+}
+
+[dir="rtl"] .service-features li::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .category-highlights li {
+    padding-left: 0;
+    padding-right: 1.5rem;
+    text-align: start;
+}
+
+[dir="rtl"] .category-highlights li::before {
+    left: auto;
+    right: 0;
+}
+
+/* Service Card Content RTL */
+[dir="rtl"] .service-content {
+    text-align: start;
+}
+
+[dir="rtl"] .category-content {
+    text-align: start;
+}
+
+/* Service Card Border RTL - Mobile */
+@media (max-width: 768px) {
+    [dir="rtl"] .service-card::before {
+        left: auto;
+        right: 0;
+    }
+}
+
+/* Timeline RTL adjustments */
+@media (max-width: 768px) {
+    [dir="rtl"] .step-content {
+        text-align: right;
+        padding-left: 0;
+        padding-right: 1rem;
+    }
+    
+    [dir="rtl"] .timeline-line {
+        left: auto;
+        right: 30px;
+    }
+    
+    [dir="rtl"] .process-steps {
+        padding-left: 0;
+        padding-right: 60px;
+    }
+    
+    [dir="rtl"] .step-number {
+        left: auto;
+        right: -60px;
+    }
+    
+    [dir="rtl"] .timeline-step::before {
+        left: auto;
+        right: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    [dir="rtl"] .timeline-line {
+        right: 25px;
+    }
+    
+    [dir="rtl"] .process-steps {
+        padding-right: 50px;
+    }
+    
+    [dir="rtl"] .step-number {
+        right: -50px;
+    }
+    
+    [dir="rtl"] .timeline-step::before {
+        right: -25px;
+    }
+}
+
+/* About Page Hero Section RTL - Fix text-container margin */
+[dir="rtl"] .about-page .text-container {
+    margin-left: 0;
+    margin-right: -8rem;
+}
+
+@media (max-width: 1400px) {
+    [dir="rtl"] .about-page .text-container {
+        margin-right: -4rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    [dir="rtl"] .about-page .text-container {
+        margin-right: -2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    [dir="rtl"] .about-page .text-container {
+        margin-right: auto;
+    }
 }
 
