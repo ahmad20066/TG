@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { FaAward, FaRocket, FaBolt, FaHandshake } from "react-icons/fa";
 import "./Values.css";
 
 const Values = () => {
@@ -8,22 +9,22 @@ const Values = () => {
 
   const values = [
     {
-      icon: "⭐",
+      icon: <FaAward />,
       title: t("values.excellence.title"),
       subtitle: t("values.excellence.subtitle"),
     },
     {
-      icon: "🚀",
+      icon: <FaRocket />,
       title: t("values.innovation.title"),
       subtitle: t("values.innovation.subtitle"),
     },
     {
-      icon: "💥",
+      icon: <FaBolt />,
       title: t("values.impact.title"),
       subtitle: t("values.impact.subtitle"),
     },
     {
-      icon: "🤝",
+      icon: <FaHandshake />,
       title: t("values.integrity.title"),
       subtitle: t("values.integrity.subtitle"),
     },
@@ -87,7 +88,7 @@ const Values = () => {
           }}
           viewport={{ once: true }}
         >
-          <motion.h2
+          <div
             className="values-title"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -95,7 +96,7 @@ const Values = () => {
             viewport={{ once: true }}
           >
             {t("values.title")}
-          </motion.h2>
+          </div>
           <motion.p
             className="values-subtitle"
             initial={{ opacity: 0, y: 20 }}

@@ -198,7 +198,7 @@ const Services = () => {
           }}
           viewport={{ once: true }}
         >
-          <motion.h2
+          <div
             className="services-title"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -206,7 +206,7 @@ const Services = () => {
             viewport={{ once: true }}
           >
             {t("services.title")}
-          </motion.h2>
+          </div>
           <motion.p
             className="services-subtitle"
             initial={{ opacity: 0, y: 20 }}

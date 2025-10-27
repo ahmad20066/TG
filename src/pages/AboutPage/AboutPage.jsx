@@ -105,7 +105,6 @@ const AboutPage = () => {
       <canvas ref={canvasRef} className="particle-canvas" />
 
       <main className="about-content">
-        {/* Hero Section */}
         <section className="about-hero">
           <div className="hero-content">
             <motion.div
@@ -169,7 +168,9 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>{t("about.visionMission.title")}</h2>
+            <div className="vision-mission-title">
+              {t("about.visionMission.title")}
+            </div>
             <p className="section-description">
               {t("about.visionMission.subtitle")}
             </p>
@@ -289,7 +290,9 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>{t("about.services.title")}</h2>
+            <div className="about-services-title">
+              {t("about.services.title")}
+            </div>
             <p className="section-description">
               {t("about.services.subtitle")}
             </p>
@@ -342,7 +345,7 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>{t("about.team.title")}</h2>
+            <div className="about-team-title">{t("about.team.title")}</div>
             <p className="section-description">{t("about.team.subtitle")}</p>
             <div className="team-grid">
               {[
@@ -391,7 +394,9 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2>{t("about.contactSection.title")}</h2>
+            <div className="about-contact-title">
+              {t("about.contactSection.title")}
+            </div>
             <p className="section-description">
               {t("about.contactSection.subtitle")}
             </p>

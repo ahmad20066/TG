@@ -6,6 +6,15 @@
     z-index: 2;
 }
 
+.why-choose-us-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: red;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+}
+
 .why-choose-us-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -17,14 +26,6 @@
     margin-bottom: 4rem;
 }
 
-.why-choose-us-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--crimson-red);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin-bottom: 1rem;
-}
 
 .why-choose-us-header p {
     font-size: 1.2rem;

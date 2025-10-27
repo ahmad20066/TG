@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "../../contexts/LanguageContext";
 import Header from "../../components/Header/Header";
 import {
   FaGlobe,
@@ -33,6 +34,7 @@ const WorkPage = () => {
   const canvasRef = useRef(null);
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { language } = useLanguage();
 
   // Particle animation
   useEffect(() => {
@@ -234,6 +236,63 @@ const WorkPage = () => {
       }),
       link: "#",
     },
+    {
+      title: "Toys Lab",
+      category: "social media",
+      image: "/assets/brands/Toyslab.png", // Using placeholder image
+      icon: <FaMobileAlt />,
+      description: t("workPage.projects.Toys Lab.description"),
+      technologies: t("workPage.projects.Toys Lab.tech", {
+        returnObjects: true,
+      }),
+      link: "#",
+    },
+    {
+      title: "Barnda",
+      category: "media production",
+      image: "/assets/brands/barnda.png", // Using placeholder image
+      icon: <FaPaintBrush />,
+      description: t("workPage.projects.Barnda.description"),
+      technologies: t("workPage.projects.Barnda.tech", {
+        returnObjects: true,
+      }),
+      link: "#",
+    },
+    {
+      title: "Saudi Wrestling Federation",
+      category: "media production",
+      image: "/assets/brands/swf.png", // Using placeholder image
+      icon: <FaPaintBrush />,
+      description: t(
+        "workPage.projects.Saudi Wrestling Federation.description"
+      ),
+      technologies: t("workPage.projects.Saudi Wrestling Federation.tech", {
+        returnObjects: true,
+      }),
+      link: "#",
+    },
+    {
+      title: "Hadiha",
+      category: ["shopify"],
+      image: "/assets/brands/Hadiha.png", // Using placeholder image
+      icon: <FaShoppingCart />,
+      description: t("workPage.projects.Hadiha.description"),
+      technologies: t("workPage.projects.Hadiha.tech", {
+        returnObjects: true,
+      }),
+      link: "#",
+    },
+    {
+      title: "The Feast",
+      category: "social media",
+      image: "/assets/brands/the_feast.png", // Using placeholder image
+      icon: <FaMobileAlt />,
+      description: t("workPage.projects.the feast.description"),
+      technologies: t("workPage.projects.the feast.tech", {
+        returnObjects: true,
+      }),
+      link: "#",
+    },
   ];
 
   const categories = [
@@ -336,7 +395,13 @@ const WorkPage = () => {
                     </div>
                   </div>
                   <div className="project-content">
-                    <h3>{project.title}</h3>
+                    <h3
+                      style={{
+                        textAlign: language === "ar" ? "start" : undefined,
+                      }}
+                    >
+                      {project.title}
+                    </h3>
                     <p>{project.description}</p>
                     <div className="project-tech">
                       {project.technologies.map((tech, idx) => (

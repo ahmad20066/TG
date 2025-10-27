@@ -245,14 +245,15 @@ const HomePage = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <motion.h2
+              <motion.div
+                className="approach-title"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
                 {t("approach.title")}
-              </motion.h2>
+              </motion.div>
               <div className="stats">
                 {[
                   { number: "2+", label: t("approach.stats.years") },

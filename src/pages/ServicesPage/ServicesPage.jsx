@@ -353,7 +353,9 @@ const ServicesPage = () => {
         {/* Service Categories Navigation */}
         <section className="service-categories">
           <div className="section-container">
-            <h2>{t("servicesPage.categories.title")}</h2>
+            <div className="services-categories-title">
+              {t("servicesPage.categories.title")}
+            </div>
             <p className="section-description">
               {t("servicesPage.categories.subtitle")}
             </p>
@@ -460,7 +462,9 @@ const ServicesPage = () => {
         {/* Technologies Section */}
         <section className="technologies-section">
           <div className="section-container">
-            <h2>{t("servicesPage.technologies.title")}</h2>
+            <div className="services-technologies-title">
+              {t("servicesPage.technologies.title")}
+            </div>
             <p className="section-description">
               {t("servicesPage.technologies.subtitle")}
             </p>
@@ -498,7 +502,9 @@ const ServicesPage = () => {
         {/* Process Section */}
         <section className="process-section">
           <div className="section-container">
-            <h2>{t("servicesPage.process.title")}</h2>
+            <div className="services-process-title">
+              {t("servicesPage.process.title")}
+            </div>
             <p className="section-description">
               {t("servicesPage.process.subtitle")}
             </p>
@@ -573,7 +579,16 @@ const ServicesPage = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2>{t("servicesPage.cta.title")}</h2>
+              <div
+                style={{
+                  fontSize: "2.5rem",
+                  marginBottom: "1rem",
+                  color: "var(--crimson-red)",
+                  fontWeight: "700",
+                }}
+              >
+                {t("servicesPage.cta.title")}
+              </div>
               <p>{t("servicesPage.cta.subtitle")}</p>
               <motion.button
                 className="cta-button"
